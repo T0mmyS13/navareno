@@ -1,0 +1,139 @@
+[
+  {
+    "title": "Dýňová polévka s kokosovým mlékem",
+    "description": "Krémová, jemně nasládlá polévka s exotickou chutí kokosu a špetkou kari.",
+    "image": "/images/pumpkin_soup.jpg",
+    "time": 30,
+    "rating": 4.8,
+    "difficulty": 2,
+    "ingredients": [
+      "1 malá dýně",
+      "400 ml kokosového mléka",
+      "1 cibule",
+      "2 stroužky česneku",
+      "1 l zeleninového vývaru",
+      "1 lžička kari",
+      "Sůl a pepř",
+      "Olive oil"
+    ],
+    "instructions": [
+      "Oloupejte a nakrájejte dýni na malé kousky.",
+      "Na pánvi osmahněte cibuli a česnek na olivovém oleji.",
+      "Přidejte dýni, kari a zeleninový vývar. Vařte asi 20 minut, dokud dýně nezměkne.",
+      "Přidejte kokosové mléko, osolte a opepřete dle chuti.",
+      "Rozmixujte do hladka a podávejte."
+    ]
+  },
+  {
+    "title": "Česneková polévka s krutony",
+    "description": "Silná a voňavá česneková polévka s křupavými krutony.",
+    "image": "/images/garlic_soup.jpg",
+    "time": 25,
+    "rating": 4.5,
+    "difficulty": 1,
+    "ingredients": [
+      "6 stroužků česneku",
+      "1 l vývaru (kuřecí nebo zeleninový)",
+      "1 lžíce olivového oleje",
+      "Sůl a pepř",
+      "Čerstvá petržel",
+      "Krutony"
+    ],
+    "instructions": [
+      "Na pánvi osmahněte česnek na olivovém oleji.",
+      "Přidejte vývar, osolte a opepřete, vařte 10 minut.",
+      "Rozmixujte do hladka a podávejte s krutony a čerstvou petrželí."
+    ]
+  },
+  {
+    "title": "Rajčatová polévka s bazalkou",
+    "description": "Lehká rajčatová polévka s vůní čerstvé bazalky.",
+    "image": "/images/tomato_soup.jpg",
+    "time": 20,
+    "rating": 4.7,
+    "difficulty": 1,
+    "ingredients": [
+      "1 kg zralých rajčat",
+      "1 cibule",
+      "2 stroužky česneku",
+      "1 l zeleninového vývaru",
+      "Olive oil",
+      "Sůl, pepř",
+      "Čerstvá bazalka"
+    ],
+    "instructions": [
+      "Rajčata spařte a oloupejte, nakrájejte na kousky.",
+      "Na pánvi osmahněte cibuli a česnek na olivovém oleji.",
+      "Přidejte rajčata a vývar, vařte asi 10 minut.",
+      "Rozmixujte do hladka a přidejte nasekanou bazalku. Osolte a opepřete."
+    ]
+  },
+  {
+    "title": "Bramboračka s houbami",
+    "description": "Tradiční česká polévka plná brambor, lesních hub a voňavého koření.",
+    "image": "/images/bramboracka.jpg",
+    "time": 40,
+    "rating": 4.6,
+    "difficulty": 3,
+    "ingredients": [
+      "4 brambory",
+      "200 g lesních hub",
+      "1 cibule",
+      "2 stroužky česneku",
+      "1 l vývaru",
+      "Sůl, pepř",
+      "Majoránka"
+    ],
+    "instructions": [
+      "Nakrájejte brambory na kostičky a houby na plátky.",
+      "Na pánvi osmahněte cibuli a česnek, přidejte houby a restujte.",
+      "Přidejte brambory a vývar, vařte asi 30 minut.",
+      "Osolte, opepřete a přidejte majoránku."
+    ]
+  },
+  {
+    "title": "Kuřecí vývar s nudlemi",
+    "description": "Poctivý domácí vývar s jemným kuřecím masem a nudlemi.",
+    "image": "/images/chicken_broth.jpg",
+    "time": 60,
+    "rating": 4.9,
+    "difficulty": 2,
+    "ingredients": [
+      "1 kuře",
+      "2 mrkve",
+      "1 cibule",
+      "2 stroužky česneku",
+      "1 l vývaru",
+      "Sůl, pepř",
+      "Nudle"
+    ],
+    "instructions": [
+      "Kuře dejte do hrnce, přidejte mrkev, cibuli a česnek.",
+      "Přilijte vývar a vařte 50 minut.",
+      "Vyjměte kuře, osolte a opepřete vývar.",
+      "Podávejte s nudlemi a kuřecím masem."
+    ]
+  },
+  {
+    "title": "Kukuřičná polévka s chilli",
+    "description": "Krémová kukuřičná polévka s lehce pikantním nádechem chilli.",
+    "image": "/images/corn_soup.jpg",
+    "time": 35,
+    "rating": 4.4,
+    "difficulty": 2,
+    "ingredients": [
+      "1 plechovka kukuřice",
+      "1 cibule",
+      "2 stroužky česneku",
+      "1 l zeleninového vývaru",
+      "1 lžička chilli",
+      "Sůl, pepř",
+      "Olive oil"
+    ],
+    "instructions": [
+      "Osmahněte cibuli a česnek na olivovém oleji.",
+      "Přidejte kukuřici a vývar, vařte 20 minut.",
+      "Rozmixujte do hladka, přidejte chilli, osolte a opepřete."
+    ]
+  }
+]

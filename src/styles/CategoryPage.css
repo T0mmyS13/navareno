@@ -1,0 +1,134 @@
+.category-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Nová sekce pro tlačítko a filtr */
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Styl pro tlačítko návratu */
+.back-button {
+    background-color: #ff5e57;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #e04e47;
+}
+
+/* Styl pro dropdown menu */
+.sort-filter select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl pro tlačítko pro náhodný recept */
+.random-recipe-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    animation: bounce 4s ease-in-out 25;  /* Animace s plynulým skákáním */
+}
+
+/* Animace skoku tlačítka (bounce) */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);  /* Menší a plynulejší výskok */
+    }
+    50% {
+        transform: translateY(0);  /* Návrat do výchozí pozice */
+    }
+    75% {
+        transform: translateY(-5px);  /* Další menší výskok */
+    }
+    100% {
+        transform: translateY(0);  /* Konečná pozice */
+    }
+}
+
+/* Efekt při kliknutí na tlačítko */
+.random-recipe-button:active {
+    transform: scale(0.95); /* Tlačítko se zmenší při kliknutí */
+}
+.random-recipe-button:hover {
+    background-color: #388e3c;
+}
+
+.subtitle {
+    text-transform: lowercase;
+}
+
+.subtitle::first-letter {
+    text-transform: uppercase;
+}

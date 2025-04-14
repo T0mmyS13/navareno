@@ -1,0 +1,83 @@
+/* Kategorie kontejner */
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover efekt pro kategorii */
+.category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Obrázek kategorie */
+.category-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Titulek kategorie */
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 15px 0;
+  color: #333;
+}
+
+/* Popis kategorie */
+.category-description {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* Přechodové efekty pro hover */
+.category-title,
+.category-description {
+  transition: color 0.3s ease;
+}
+
+/* Hover efekt pro titulek kategorie */
+.category:hover .category-title {
+  color: #007bff;
+}
+
+/* Hover efekt pro popis kategorie */
+.category:hover .category-description {
+  color: #555;
+}
+
+/* Rychlé odkazy na kategorie - textové odkazy */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin-bottom: 40px;
+}
+
+/* Styl pro text rychlých odkazů */
+.quick-link-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Hover efekt pro text rychlých odkazů */
+.quick-link-text:hover {
+  color: #ff8c00;
+}
+
