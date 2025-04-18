@@ -2,27 +2,39 @@
     display: flex;
     justify-content: space-around;
     gap: 0;
-    margin: 20px 0;
+    margin: 20px auto; /* Center the component */
     padding: 10px 0;
     background-color: #ffffff;
     border-radius: 0;
     box-shadow: none;
     width: 100%;
+    max-width: 1200px; /* Match the width of other components */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .quick-link-text {
+    font-size: 1.5rem; /* Match .category-title font size */
+    font-weight: 600; /* Match .category-title font weight */
     text-decoration: none;
-    color: #333; /* Black text */
-    font-family: 'Roboto', sans-serif; /* Same font as MainPage */
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 10px 20px;
-    flex: 1;
+    color: #333; /* Match .category-title color */
+    transition: color 0.3s ease;
     text-align: center;
-    transition: background-color 0.3s ease;
 }
 
 .quick-link-text:hover {
-    background-color: #f7f7f7; /* Subtle hover effect */
-    color: #000; /* Slightly darker text on hover */
+    color: #007bff; /* Match .category-title hover color */
+}
+
+.quick-link-text.add-recipe {
+    color: #1976d2; /* Green color for "Přidat recept" */
+}
+.quick-link-text.add-recipe:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.quick-link-text.cart-link {
+    color: #4CAF50; /* Red color for "Košík" */
+}
+.quick-link-text.cart-link:hover {
+    color: #388e3c; /* Darker green on hover */
 }

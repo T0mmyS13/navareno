@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Category from "../atoms/Category.jsx";
 import "../styles/MainPage.css";
 
@@ -7,7 +6,7 @@ const categories = [
     { title: "Předkrmy", link: "/predkrmy", description: "Malé lahůdky, které vás skvěle naladí na hlavní chod.", image: "/images/predkrmy.jpg" },
     { title: "Polévky", link: "/polevky", description: "Hřejivé a chutné polévky pro každou příležitost.", image: "/images/polevky.jpg" },
     { title: "Saláty", link: "/salaty", description: "Lehké, zdravé a plné svěžích chutí.", image: "/images/salaty.jpg" },
-    { title: "Hlavní chody", link: "/hlavni-chody", description: "Výborná jídla, která vás zasytí a potěší.", image: "/images/hlavni chody.jpg" },
+    { title: "Hlavní chody", link: "/hlavni-chody", description: "Výborná jídla, která vás zasytí a potěší.", image: "/images/hlavni-chody.jpg" },
     { title: "Dezerty", link: "/dezerty", description: "Sladká tečka, kterou si zamilujete.", image: "/images/dezerty.jpg" },
     { title: "Nápoje", link: "/napoje", description: "Osvěžující i hřejivé nápoje pro každou chvíli.", image: "/images/napoje.jpg" },
 ];

@@ -13,57 +13,13 @@
       {"name": "pepř", "quantity": null, "unit": "špetka"}
     ],
     "instructions": [
-      "Opečte chléb na pánvi nebo v troubě.",
-      "Připravte rajčata a nakrájejte je na kousky.",
-      "Smíchejte rajčata s bazalkou, solí a pepřem.",
-      "Na opečený chléb naneste rajčatovou směs."
+      "Opečte chléb na pánvi nebo v troubě do zlatova.",
+      "Rajče nakrájejte na malé kostičky.",
+      "Smíchejte rajčata s nasekanou bazalkou, osolte a opepřete.",
+      "Na opečený chléb naneste směs a zakápněte olivovým olejem."
     ],
     "time": 15,
     "rating": 4.6,
-    "difficulty": 1
-  },
-  {
-    "title": "Caesar Salát",
-    "description": "Klasický salát s krutony a Caesar dresinkem.",
-    "image": "/images/predkrmy/cezar-salat.jpg",
-    "link": "/predkrm/cezar-salat",
-    "ingredients": [
-      {"name": "římský salát", "quantity": 1, "unit": "hrst"},
-      {"name": "parmazán", "quantity": 20, "unit": "g"},
-      {"name": "krutony", "quantity": 5, "unit": "ks"},
-      {"name": "Cezar dresink", "quantity": 1, "unit": "lžíce"}
-    ],
-    "instructions": [
-      "Natrhejte salát na menší kousky.",
-      "Smíchejte s dresinkem a přidejte krutony.",
-      "Posypte parmazánem."
-    ],
-    "time": 10,
-    "rating": 4.7,
-    "difficulty": 1
-  },
-  {
-    "title": "Caprese Salát",
-    "description": "Čerstvá kombinace rajčat, mozzarelly a bazalky s balzamikovou redukcí.",
-    "image": "/images/predkrmy/caprese.jpg",
-    "link": "/predkrm/caprese-salat",
-    "ingredients": [
-      {"name": "rajče", "quantity": 1, "unit": "ks"},
-      {"name": "mozzarella", "quantity": 50, "unit": "g"},
-      {"name": "bazalka", "quantity": 4, "unit": "lístků"},
-      {"name": "extra panenský olivový olej", "quantity": 1, "unit": "lžička"},
-      {"name": "balzamikový ocet", "quantity": 1, "unit": "lžička"},
-      {"name": "sůl", "quantity": null, "unit": "špetka"},
-      {"name": "pepř", "quantity": null, "unit": "špetka"}
-    ],
-    "instructions": [
-      "Nakrájejte rajčata a mozzarellu na plátky.",
-      "Na servírovacím talíři střídavě vrstvěte rajčata a mozzarellu.",
-      "Posypte čerstvou bazalkou.",
-      "Pokapejte olivovým olejem a balzamikovým octem, osolte a opepřete dle chuti."
-    ],
-    "time": 10,
-    "rating": 4.8,
     "difficulty": 1
   },
   {
@@ -93,26 +49,73 @@
     "difficulty": 2
   },
   {
-    "title": "Smažený sýr",
-    "description": "Oblíbený český předkrm s křupavou krustou a měkkým sýrem uvnitř, podávaný s tatarskou omáčkou.",
-    "image": "/images/predkrmy/smazeny-syr.jpg",
-    "link": "/predkrm/smazeny-syr",
+    "title": "Rajčatová salsa s nachos",
+    "description": "Osvěžující rajčatová salsa s křupavými kukuřičnými chipsy.",
+    "image": "/images/predkrmy/salsa.jpg",
+    "link": "/predkrm/salsa-nachos",
     "ingredients": [
-      {"name": "sýr (např. Eidam)", "quantity": 1, "unit": "plátek"},
-      {"name": "mouka", "quantity": 2, "unit": "lžíce"},
-      {"name": "vejce", "quantity": 1, "unit": "ks"},
-      {"name": "strouhanka", "quantity": 2, "unit": "lžíce"},
-      {"name": "olej", "quantity": null, "unit": "na smažení"},
-      {"name": "tatarská omáčka", "quantity": 2, "unit": "lžíce"}
+      {"name": "rajčata", "quantity": 2, "unit": "ks"},
+      {"name": "cibule", "quantity": 0.5, "unit": "ks"},
+      {"name": "česnek", "quantity": 1, "unit": "stroužek"},
+      {"name": "limetková šťáva", "quantity": 1, "unit": "lžička"},
+      {"name": "koriandr", "quantity": 1, "unit": "lžíce"},
+      {"name": "sůl", "quantity": null, "unit": "špetka"},
+      {"name": "pepř", "quantity": null, "unit": "špetka"},
+      {"name": "nachos", "quantity": 1, "unit": "hrst"}
     ],
     "instructions": [
-      "Plátky sýra obalte nejprve v mouce, poté ve vejcích a nakonec ve strouhance.",
-      "Na pánvi rozehřejte olej a sýr smažte dozlatova.",
-      "Přebytečný olej nechte okapat na papírové utěrce.",
-      "Podávejte s tatarskou omáčkou."
+      "Rajčata spařte a oloupejte, poté nakrájejte na malé kousky.",
+      "Cibuli nasekejte nadrobno, česnek prolisujte.",
+      "Smíchejte všechny ingredience, přidejte limetkovou šťávu a koriandr.",
+      "Podávejte s nachos."
     ],
-    "time": 15,
-    "rating": 4.3,
+    "time": 10,
+    "rating": 4.4,
+    "difficulty": 1
+  },
+  {
+    "title": "Tatarák z červené řepy",
+    "description": "Zdravý a chutný vegetariánský předkrm inspirovaný klasickým tatarákem.",
+    "image": "/images/predkrmy/tatarak-repa.jpg",
+    "link": "/predkrm/tatarak-repa",
+    "ingredients": [
+      {"name": "červená řepa", "quantity": 1, "unit": "ks"},
+      {"name": "kyselá okurka", "quantity": 1, "unit": "ks"},
+      {"name": "červená cibule", "quantity": 0.25, "unit": "ks"},
+      {"name": "hořčice", "quantity": 1, "unit": "lžička"},
+      {"name": "sůl", "quantity": null, "unit": "špetka"},
+      {"name": "pepř", "quantity": null, "unit": "špetka"},
+      {"name": "chléb", "quantity": 2, "unit": "plátky"}
+    ],
+    "instructions": [
+      "Řepu upečte nebo uvařte do měkka a nastrouhejte.",
+      "Přidejte nakrájenou okurku, cibuli, hořčici, osolte a opepřete.",
+      "Podávejte na opečeném chlebu."
+    ],
+    "time": 25,
+    "rating": 4.2,
+    "difficulty": 2
+  },
+  {
+    "title": "Pečené papriky plněné fetou",
+    "description": "Lehké pečené papriky s bylinkovou fetou, ideální pro hosty.",
+    "image": "/images/predkrmy/pecene-papriky.jpg",
+    "link": "/predkrm/pecene-papriky-feta",
+    "ingredients": [
+      {"name": "malé papriky", "quantity": 3, "unit": "ks"},
+      {"name": "feta sýr", "quantity": 100, "unit": "g"},
+      {"name": "olivový olej", "quantity": 1, "unit": "lžíce"},
+      {"name": "česnek", "quantity": 1, "unit": "stroužek"},
+      {"name": "bylinky (např. tymián, oregano)", "quantity": 1, "unit": "lžička"}
+    ],
+    "instructions": [
+      "Papriky omyjte, odkrojte vršky a očistěte vnitřek.",
+      "Fetu smíchejte s nasekaným česnekem, bylinkami a olivovým olejem.",
+      "Papriky naplňte směsí a pečte 15 minut na 180 °C.",
+      "Podávejte teplé nebo vlažné."
+    ],
+    "time": 20,
+    "rating": 4.5,
     "difficulty": 2
   }
 ]

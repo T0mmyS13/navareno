@@ -1,0 +1,61 @@
+.shopping-list-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.shopping-list-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+.shopping-list-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shopping-list-container li {
+    margin: 0.5rem 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.shopping-list-container button {
+       display: block;
+       width: 100%;
+       padding: 0.8rem;
+       margin-top: 1rem;
+       background-color: #4CAF50;
+       color: white;
+       border: none;
+       cursor: pointer;
+       font-size: 16px;
+       transition: background-color 0.3s ease;
+   }
+
+.shopping-list-container button:hover {
+    background-color: #45a049;
+}
+/* Print style */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .shopping-list-container, .shopping-list-container * {
+        visibility: visible;
+    }
+
+    .shopping-list-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .buttons-container {
+        display: none;
+    }
+}
+

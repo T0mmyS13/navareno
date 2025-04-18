@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Limonáda",
+    "description": "Os refreshující nápoj z čerstvých citronů a máty.",
+    "image": "/images/napoje/limonada.jpg",
+    "link": "/napoje/limonada",
+    "ingredients": [
+      { "name": "citron", "quantity": 2, "unit": "ks" },
+      { "name": "máta", "quantity": 5, "unit": "lístků" },
+      { "name": "cukr", "quantity": 3, "unit": "lžíce" },
+      { "name": "voda", "quantity": 1, "unit": "litr" },
+      { "name": "led", "quantity": 1, "unit": "hrst" }
+    ],
+    "instructions": [
+      "Vymačkejte šťávu z citronů do nádoby.",
+      "Přidejte cukr, mátu a trochu vody, aby se cukr rozpustil.",
+      "Doplníte vodou a přidejte led.",
+      "Podávejte s několika plátky citronu a mátou na ozdobu."
+    ],
+    "time": 10,
+    "rating": 4.5,
+    "difficulty": 1
+  },
+  {
+    "title": "Mojito",
+    "description": "Oblíbený koktejl z rumu, máty, limetky a cukru.",
+    "image": "/images/napoje/mojito.jpg",
+    "link": "/napoje/mojito",
+    "ingredients": [
+      { "name": "bílý rum", "quantity": 50, "unit": "ml" },
+      { "name": "limetka", "quantity": 1, "unit": "ks" },
+      { "name": "máta", "quantity": 8, "unit": "lístků" },
+      { "name": "cukr", "quantity": 2, "unit": "lžičky" },
+      { "name": "perlivá voda", "quantity": 100, "unit": "ml" },
+      { "name": "led", "quantity": 1, "unit": "hrst" }
+    ],
+    "instructions": [
+      "V mističce smíchejte cukr a mátu.",
+      "Přidejte šťávu z limetky a jemně promíchejte.",
+      "Do sklenice přidejte led a nalijte rum.",
+      "Doplníte perlivou vodou a zamíchejte.",
+      "Podávejte s většími lístky máty na ozdobu."
+    ],
+    "time": 5,
+    "rating": 4.8,
+    "difficulty": 2
+  },
+  {
+    "title": "Pina Colada",
+    "description": "Sladký tropický koktejl z kokosu a ananasu.",
+    "image": "/images/napoje/pina-colada.jpg",
+    "link": "/napoje/pina-colada",
+    "ingredients": [
+      { "name": "bílý rum", "quantity": 50, "unit": "ml" },
+      { "name": "ananasový džus", "quantity": 100, "unit": "ml" },
+      { "name": "kokosový krém", "quantity": 50, "unit": "ml" },
+      { "name": "led", "quantity": 1, "unit": "hrst" }
+    ],
+    "instructions": [
+      "Do mixéru přidejte rum, ananasový džus a kokosový krém.",
+      "Přidejte led a mixujte do hladka.",
+      "Nalijte do sklenice a podávejte s plátkem ananasu."
+    ],
+    "time": 5,
+    "rating": 4.7,
+    "difficulty": 2
+  },
+  {
+    "title": "Nealkoholická mojito",
+    "description": "Verze mojita bez alkoholu, s osvěžující mátou a limetkou.",
+    "image": "/images/napoje/nealko-mojito.jpg",
+    "link": "/napoje/nealko-mojito",
+    "ingredients": [
+      { "name": "máta", "quantity": 8, "unit": "lístků" },
+      { "name": "limetka", "quantity": 1, "unit": "ks" },
+      { "name": "cukr", "quantity": 2, "unit": "lžičky" },
+      { "name": "perlivá voda", "quantity": 200, "unit": "ml" },
+      { "name": "led", "quantity": 1, "unit": "hrst" }
+    ],
+    "instructions": [
+      "V mističce smíchejte mátu a cukr.",
+      "Přidejte šťávu z limetky a jemně promíchejte.",
+      "Do sklenice dejte led a nalijte perlivou vodu.",
+      "Podávejte s většími lístky máty na ozdobu."
+    ],
+    "time": 5,
+    "rating": 4.3,
+    "difficulty": 1
+  },
+  {
+    "title": "Frapé",
+    "description": "Studený kávový nápoj ideální na horké letní dny.",
+    "image": "/images/napoje/frape.jpg",
+    "link": "/napoje/frape",
+    "ingredients": [
+      { "name": "instantní káva", "quantity": 1, "unit": "lžička" },
+      { "name": "cukr", "quantity": 1, "unit": "lžička" },
+      { "name": "led", "quantity": 1, "unit": "hrst" },
+      { "name": "voda", "quantity": 50, "unit": "ml" },
+      { "name": "mléko", "quantity": 100, "unit": "ml" }
+    ],
+    "instructions": [
+      "V malé nádobě smíchejte instantní kávu, cukr a vodu.",
+      "Přidejte led a důkladně promíchejte.",
+      "Nalijte do sklenice a dolijte mlékem.",
+      "Podávejte se strouhanou čokoládou na ozdobu."
+    ],
+    "time": 5,
+    "rating": 4.4,
+    "difficulty": 1
+  }
+]
