@@ -15,14 +15,6 @@ const categories = [
 const MainPage = () => {
     return (
         <div className="container">
-            {/* Rychlé odkazy na kategorie - textové odkazy bez obrázků */}
-            <div className="quick-links">
-                {categories.map((cat) => (
-                    <Link to={cat.link} className="quick-link-text" key={cat.title}>
-                        {cat.title}
-                    </Link>
-                ))}
-            </div>
 
             <div className="hero">
                 <img src="/images/hero.jpg" alt="Navařeno" className="hero-image" />

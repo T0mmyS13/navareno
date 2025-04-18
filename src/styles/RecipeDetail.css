@@ -51,6 +51,18 @@ ul, ol {
     margin-left: 20px;
 }
 
+
+
+/* Stylování vstupního pole pro počet porcí */
+.recipe-content input#portion-count {
+    width: 60px;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
 .back-button {
     display: block;
     text-align: center;

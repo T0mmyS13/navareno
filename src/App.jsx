@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import CategoryPage from "./pages/CategoryPage";
 import RecipeDetail from "./pages/RecipeDetail";
+import HeaderLink from "./atoms/HeaderLink.jsx";
 
 const App = () => {
     return (
         <Router>
+            <HeaderLink />
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/:category" element={<CategoryPage />} />

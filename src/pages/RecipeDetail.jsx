@@ -1,29 +1,58 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/RecipeDetail.css";
 import FoodItem from "../atoms/FoodItem.jsx"; // Importujeme FoodItem komponentu
 
 const RecipeDetail = () => {
     const { category, recipeName } = useParams(); // Kategorie + název receptu z URL
+    const [portionCount, setPortionCount] = useState(2); // Počet porcí
     const [recipe, setRecipe] = useState(null);
+    const [adjustedIngredients, setAdjustedIngredients] = useState([]);
 
-    useEffect(() => {
-        console.log("Načítám JSON:", `/recipes/${category}.json`);
+    // Načítání dat přímo při renderování
+    const fetchRecipe = () => {
         fetch(`/recipes/${category}.json`) // Dynamické načítání podle kategorie
             .then((response) => response.json())
             .then((data) => {
                 const foundRecipe = data.find(
                     (r) => r.title.toLowerCase() === recipeName.toLowerCase()
                 );
-                setRecipe(foundRecipe);
+                if (foundRecipe) {
+                    setRecipe(foundRecipe);
+                    setAdjustedIngredients(foundRecipe.ingredients);
+                }
             })
             .catch((error) => console.error("Chyba při načítání receptu:", error));
-    }, [category, recipeName]);
+    };
 
-    // Pokud recept není nalezen, zobrazí se zpráva
+    // Pokud recept není načtený, zavoláme funkci pro jeho načtení
     if (!recipe) {
-        return <p>Recept nebyl nalezen.</p>;
+        fetchRecipe(); // Načteme recept při renderování
+        return <p>Načítám recept...</p>;
     }
+
+    // Funkce pro přepočet ingrediencí podle porcí
+    const adjustIngredientsForPortions = (ingredients, currentPortions, targetPortions) => {
+        return ingredients.map(ingredient => ({
+            ...ingredient,
+            quantity: ingredient.quantity * (targetPortions / currentPortions),
+        }));
+    };
+
+    // Zpracování změny počtu porcí
+    const handlePortionChange = (e) => {
+        const newPortionCount = e.target.value;
+        setPortionCount(newPortionCount);
+
+        if (recipe && recipe.ingredients) {
+            const adjusted = adjustIngredientsForPortions(
+                recipe.ingredients,
+                2, // Předpokládáme, že původní počet porcí je 2
+                newPortionCount // Nový počet porcí
+            );
+            setAdjustedIngredients(adjusted); // Uložíme přepočtené ingredience
+        }
+    };
 
     return (
         <div className="recipe-detail">
@@ -40,11 +69,21 @@ const RecipeDetail = () => {
 
             <div className="recipe-content">
                 <h2>Ingredience</h2>
-                {/* Zkontroluj, zda ingredients existují a nejsou prázdné */}
-                {recipe.ingredients && recipe.ingredients.length > 0 ? (
+                <label htmlFor="portion-count">Počet porcí:</label>
+                <input
+                    id="portion-count"
+                    type="number"
+                    value={portionCount}
+                    onChange={handlePortionChange}
+                    min="1"
+                />
+                {/* Zkontroluj, zda adjustedIngredients existují a nejsou prázdné */}
+                {adjustedIngredients && adjustedIngredients.length > 0 ? (
                     <ul>
-                        {recipe.ingredients.map((ingredient, index) => (
-                            <li key={index}>{ingredient}</li>
+                        {adjustedIngredients.map((ingredient, index) => (
+                            <li key={index}>
+                                {ingredient.name}: {ingredient.quantity} {ingredient.unit}
+                            </li>
                         ))}
                     </ul>
                 ) : (
@@ -62,6 +101,7 @@ const RecipeDetail = () => {
                 ) : (
                     <p>Postup není k dispozici.</p>
                 )}
+
 
                 <a href={`/${category}`} className="back-button">
                     Zpět na {category}

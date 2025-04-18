@@ -5,11 +5,12 @@
     "image": "/images/predkrmy/bruschetta.jpg",
     "link": "/predkrm/bruschetta",
     "ingredients": [
-      "1 plátek chléba",
-      "1 rajče",
-      "5-6 lístků bazalky",
-      "1 lžička olivového oleje",
-      "špetka soli a pepře"
+      {"name": "chléb", "quantity": 1, "unit": "plátek"},
+      {"name": "rajče", "quantity": 1, "unit": "ks"},
+      {"name": "bazalka", "quantity": 5, "unit": "lístků"},
+      {"name": "olivový olej", "quantity": 1, "unit": "lžička"},
+      {"name": "sůl", "quantity": null, "unit": "špetka"},
+      {"name": "pepř", "quantity": null, "unit": "špetka"}
     ],
     "instructions": [
       "Opečte chléb na pánvi nebo v troubě.",
@@ -27,10 +28,10 @@
     "image": "/images/predkrmy/cezar-salat.jpg",
     "link": "/predkrm/cezar-salat",
     "ingredients": [
-      "1 hrst římského salátu",
-      "20 g parmazánu",
-      "5-6 krutonů",
-      "1-2 lžíce Cezar dresinku"
+      {"name": "římský salát", "quantity": 1, "unit": "hrst"},
+      {"name": "parmazán", "quantity": 20, "unit": "g"},
+      {"name": "krutony", "quantity": 5, "unit": "ks"},
+      {"name": "Cezar dresink", "quantity": 1, "unit": "lžíce"}
     ],
     "instructions": [
       "Natrhejte salát na menší kousky.",
@@ -47,12 +48,13 @@
     "image": "/images/predkrmy/caprese.jpg",
     "link": "/predkrm/caprese-salat",
     "ingredients": [
-      "1 rajče",
-      "50 g mozzarelly",
-      "4-5 lístků bazalky",
-      "1 lžička extra panenského olivového oleje",
-      "1 lžička balzamikového octa",
-      "špetka soli a pepře"
+      {"name": "rajče", "quantity": 1, "unit": "ks"},
+      {"name": "mozzarella", "quantity": 50, "unit": "g"},
+      {"name": "bazalka", "quantity": 4, "unit": "lístků"},
+      {"name": "extra panenský olivový olej", "quantity": 1, "unit": "lžička"},
+      {"name": "balzamikový ocet", "quantity": 1, "unit": "lžička"},
+      {"name": "sůl", "quantity": null, "unit": "špetka"},
+      {"name": "pepř", "quantity": null, "unit": "špetka"}
     ],
     "instructions": [
       "Nakrájejte rajčata a mozzarellu na plátky.",
@@ -70,15 +72,15 @@
     "image": "/images/predkrmy/hummus.jpg",
     "link": "/predkrm/hummus-s-pita",
     "ingredients": [
-      "1/4 konzervy cizrny",
-      "0.5 lžíce tahini",
-      "šťáva z 1/4 citronu",
-      "1/4 stroužku česneku",
-      "1 lžička extra panenského olivového oleje",
-      "špetka soli",
-      "špetka mletého kmínu",
-      "špetka papriky (na ozdobení)",
-      "1 plátek pita chleba"
+      {"name": "cizrna", "quantity": 0.25, "unit": "konzervy"},
+      {"name": "tahini", "quantity": 0.5, "unit": "lžíce"},
+      {"name": "citronová šťáva", "quantity": 0.25, "unit": "ks"},
+      {"name": "česnek", "quantity": 0.25, "unit": "stroužku"},
+      {"name": "extra panenský olivový olej", "quantity": 1, "unit": "lžička"},
+      {"name": "sůl", "quantity": null, "unit": "špetka"},
+      {"name": "kmín", "quantity": null, "unit": "špetka"},
+      {"name": "paprika", "quantity": null, "unit": "špetka (na ozdobení)"},
+      {"name": "pita chléb", "quantity": 1, "unit": "plátek"}
     ],
     "instructions": [
       "Cizrnu slijte a propláchněte.",
@@ -96,12 +98,12 @@
     "image": "/images/predkrmy/smazeny-syr.jpg",
     "link": "/predkrm/smazeny-syr",
     "ingredients": [
-      "1 plátek sýra (např. Eidam)",
-      "2 lžíce mouky",
-      "1 vejce",
-      "2 lžíce strouhanky",
-      "olej na smažení",
-      "2 lžíce tatarské omáčky"
+      {"name": "sýr (např. Eidam)", "quantity": 1, "unit": "plátek"},
+      {"name": "mouka", "quantity": 2, "unit": "lžíce"},
+      {"name": "vejce", "quantity": 1, "unit": "ks"},
+      {"name": "strouhanka", "quantity": 2, "unit": "lžíce"},
+      {"name": "olej", "quantity": null, "unit": "na smažení"},
+      {"name": "tatarská omáčka", "quantity": 2, "unit": "lžíce"}
     ],
     "instructions": [
       "Plátky sýra obalte nejprve v mouce, poté ve vejcích a nakonec ve strouhance.",
@@ -112,141 +114,5 @@
     "time": 15,
     "rating": 4.3,
     "difficulty": 2
-  },
-  {
-    "title": "Mini Quiche",
-    "description": "Malé slané koláčky plněné vajíčkem, sýrem a vybranou zeleninou, ideální jako elegantní předkrm.",
-    "image": "/images/predkrmy/mini-quiche.jpg",
-    "link": "/predkrm/mini-quiche",
-    "ingredients": [
-      "1/6 listového těsta (z balení)",
-      "1 vejce",
-      "30 ml smetany ke šlehání",
-      "15 g strouhaného sýra (např. Gouda)",
-      "20 g zeleniny (např. špenát nebo paprika)",
-      "špetka soli a pepře"
-    ],
-    "instructions": [
-      "Předehřejte troubu na 180°C.",
-      "Vystříkněte formičky na muffiny listovým těstem.",
-      "V míse rozšlehejte vejce se smetanou, osolte a opepřete.",
-      "Vmíchejte strouhaný sýr a nakrájenou zeleninu.",
-      "Nalejte směs do formiček a pečte 20–25 minut, dokud quiche nezíská zlatavou barvu."
-    ],
-    "time": 25,
-    "rating": 4.5,
-    "difficulty": 2
-  },
-  {
-    "title": "Guacamole",
-    "description": "Krémová avokádová pomazánka s limetkou a koriandrem.",
-    "image": "/images/predkrmy/guacamole.jpg",
-    "link": "/predkrm/guacamole",
-    "ingredients": [
-      "1 zralé avokádo",
-      "1/2 limetky (šťáva)",
-      "1/4 cibule",
-      "1 stroužek česneku",
-      "1 lžíce nasekaného koriandru",
-      "sůl a pepř dle chuti"
-    ],
-    "instructions": [
-      "Avokádo rozmačkejte vidličkou.",
-      "Přidejte limetkovou šťávu, nasekanou cibuli a česnek.",
-      "Osolte, opepřete a přidejte koriandr.",
-      "Promíchejte a podávejte s nachos nebo pečivem."
-    ],
-    "time": 10,
-    "rating": 4.8,
-    "difficulty": 1
-  },
-  {
-    "title": "Tatarák z lososa",
-    "description": "Jemně nakrájený losos s avokádem a limetkovou šťávou.",
-    "image": "/images/predkrmy/tatarak-losos.jpg",
-    "link": "/predkrm/tatarak-losos",
-    "ingredients": [
-      "100 g čerstvého lososa",
-      "1/2 avokáda",
-      "1/2 limetky (šťáva)",
-      "1 lžička olivového oleje",
-      "sůl a pepř dle chuti",
-      "1 lžíce nasekané pažitky"
-    ],
-    "instructions": [
-      "Nakrájejte lososa na drobné kostičky.",
-      "Avokádo rozmačkejte a smíchejte s limetkovou šťávou.",
-      "Přidejte lososa, olivový olej, sůl, pepř a promíchejte.",
-      "Podávejte s krekry nebo opečeným chlebem."
-    ],
-    "time": 15,
-    "rating": 4.9,
-    "difficulty": 2
-  },
-  {
-    "title": "Pečené batáty s rozmarýnem",
-    "description": "Voňavé a křupavé batáty pečené s rozmarýnem a olivovým olejem.",
-    "image": "/images/predkrmy/bataty.jpg",
-    "link": "/predkrm/pecene-bataty",
-    "ingredients": [
-      "1 střední batát",
-      "1 lžíce olivového oleje",
-      "1 lžička sušeného rozmarýnu",
-      "sůl a pepř dle chuti"
-    ],
-    "instructions": [
-      "Batát oloupejte a nakrájejte na hranolky.",
-      "Promíchejte s olivovým olejem, rozmarýnem, solí a pepřem.",
-      "Pečte v troubě na 200°C asi 20 minut do zlatova."
-    ],
-    "time": 25,
-    "rating": 4.7,
-    "difficulty": 1
-  },
-  {
-    "title": "Krevetový koktejl",
-    "description": "Elegantní předkrm s krevetami a krémovou koktejlovou omáčkou.",
-    "image": "/images/predkrmy/krevetovy-koktejl.jpg",
-    "link": "/predkrm/krevetovy-koktejl",
-    "ingredients": [
-      "100 g vařených krevet",
-      "2 lžíce majonézy",
-      "1 lžíce kečupu",
-      "1 lžička worcesterské omáčky",
-      "pár kapek citronové šťávy",
-      "sůl a pepř dle chuti",
-      "hlávkový salát na ozdobu"
-    ],
-    "instructions": [
-      "Smíchejte majonézu, kečup, worcester a citronovou šťávu.",
-      "Osolte, opepřete a přidejte krevety.",
-      "Podávejte v mističce na lůžku hlávkového salátu."
-    ],
-    "time": 10,
-    "rating": 4.6,
-    "difficulty": 1
-  },
-  {
-    "title": "Carpaccio z červené řepy",
-    "description": "Lehký a svěží předkrm z plátků červené řepy s kozím sýrem.",
-    "image": "/images/predkrmy/carpaccio-repa.jpg",
-    "link": "/predkrm/carpaccio-repa",
-    "ingredients": [
-      "1 střední červená řepa",
-      "30 g kozího sýra",
-      "1 lžíce balzamikové redukce",
-      "1 lžička olivového oleje",
-      "pár lístků rukoly",
-      "sůl a pepř dle chuti"
-    ],
-    "instructions": [
-      "Řepu uvařte doměkka, oloupejte a nakrájejte na tenké plátky.",
-      "Na talíř vyskládejte řepu a rozdrobte kozí sýr.",
-      "Zakápněte balzamikovou redukcí a olivovým olejem.",
-      "Ozdobte rukolou a dochuťte solí a pepřem."
-    ],
-    "time": 20,
-    "rating": 4.8,
-    "difficulty": 1
   }
 ]
