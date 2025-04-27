@@ -10,7 +10,7 @@ const HeaderLink = () => {
         { title: "Hlavní chody", link: "/hlavni-chody" },
         { title: "Dezerty", link: "/dezerty" },
         { title: "Nápoje", link: "/napoje" },
-        { title: "Přidat recept", link: "/new-recipe" },
+        //{ title: "Přidat recept", link: "/new-recipe" },
         { title: "Nakupní seznam", link: "/cart" },
     ];
 
@@ -27,6 +27,8 @@ const HeaderLink = () => {
                     {cat.title}
                 </Link>
             ))}
+
+
         </div>
     );
 };

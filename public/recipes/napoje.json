@@ -1,8 +1,8 @@
 [
   {
     "title": "Limonáda",
-    "description": "Os refreshující nápoj z čerstvých citronů a máty.",
-    "image": "/images/napoje/limonada.jpg",
+    "description": "Refreshující nápoj z čerstvých citronů a máty.",
+    "image": "https://images.unsplash.com/photo-1507281549113-040fcfef650e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGVtb25hZGV8ZW58MHx8MHx8fDA%3D",
     "link": "/napoje/limonada",
     "ingredients": [
       { "name": "citron", "quantity": 2, "unit": "ks" },
@@ -24,7 +24,7 @@
   {
     "title": "Mojito",
     "description": "Oblíbený koktejl z rumu, máty, limetky a cukru.",
-    "image": "/images/napoje/mojito.jpg",
+    "image": "https://plus.unsplash.com/premium_photo-1722194069211-199c1b4a2e0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bW9qaXRvfGVufDB8fDB8fHww",
     "link": "/napoje/mojito",
     "ingredients": [
       { "name": "bílý rum", "quantity": 50, "unit": "ml" },
@@ -48,7 +48,7 @@
   {
     "title": "Pina Colada",
     "description": "Sladký tropický koktejl z kokosu a ananasu.",
-    "image": "/images/napoje/pina-colada.jpg",
+    "image": "https://images.unsplash.com/photo-1607644536940-6c300b5784c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "link": "/napoje/pina-colada",
     "ingredients": [
       { "name": "bílý rum", "quantity": 50, "unit": "ml" },
@@ -68,7 +68,7 @@
   {
     "title": "Nealkoholická mojito",
     "description": "Verze mojita bez alkoholu, s osvěžující mátou a limetkou.",
-    "image": "/images/napoje/nealko-mojito.jpg",
+    "image": "https://images.unsplash.com/photo-1634496064950-02f043806b09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlyZ2luJTIwbW9qaXRvfGVufDB8fDB8fHww",
     "link": "/napoje/nealko-mojito",
     "ingredients": [
       { "name": "máta", "quantity": 8, "unit": "lístků" },
@@ -90,7 +90,7 @@
   {
     "title": "Frapé",
     "description": "Studený kávový nápoj ideální na horké letní dny.",
-    "image": "/images/napoje/frape.jpg",
+    "image": "https://plus.unsplash.com/premium_photo-1663853491881-8bbd70e7d93b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnJhcHBlfGVufDB8MHwwfHx8MA%3D%3D",
     "link": "/napoje/frape",
     "ingredients": [
       { "name": "instantní káva", "quantity": 1, "unit": "lžička" },

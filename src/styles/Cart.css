@@ -1,42 +1,97 @@
 .shopping-list-container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .shopping-list-container h1 {
     text-align: center;
     color: #333;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .shopping-list-container ul {
     list-style-type: none;
     padding: 0;
+    margin: 1rem 0;
 }
 
 .shopping-list-container li {
-    margin: 0.5rem 0;
-    font-size: 16px;
+    margin: 0.6rem 0;
+    font-size: 1.1rem;
     color: #555;
+    padding: 10px 0;
+    display: flex; /* Flexbox pro uspořádání do řady */
+    justify-content: space-between; /* Rozdělení na dva sloupce */
+    align-items: center; /* Vertikálně zarovnáno na střed */
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.shopping-list-container li:last-child {
+    border-bottom: none;
+}
+
+.shopping-list-container .ingredient-name {
+    font-weight: bold;
+    flex: 1; /* Tlačí název ingredience, aby zabíral místo v levém sloupci */
+}
+
+.shopping-list-container .ingredient-quantity,
+.shopping-list-container .ingredient-unit {
+    font-size: 1rem;
+    color: #777;
+    text-align: right; /* Zarovnání množství a jednotky doprava */
+    margin-left: 5px;
 }
 
 .shopping-list-container button {
-       display: block;
-       width: 100%;
-       padding: 0.8rem;
-       margin-top: 1rem;
-       background-color: #4CAF50;
-       color: white;
-       border: none;
-       cursor: pointer;
-       font-size: 16px;
-       transition: background-color 0.3s ease;
-   }
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
 
 .shopping-list-container button:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
+
+.shopping-list-container button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qr-code-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.qr-code-container div {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Print style */
 @media print {
     body * {
@@ -57,5 +112,8 @@
     .buttons-container {
         display: none;
     }
-}
 
+    .qr-code-container {
+        display: none;
+    }
+}

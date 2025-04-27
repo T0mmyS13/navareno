@@ -72,7 +72,7 @@
 
 .recipe-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 položky na řádku */
     gap: 20px;
     padding: 20px;
     background-color: #fff;
@@ -131,4 +131,17 @@
 
 .subtitle::first-letter {
     text-transform: uppercase;
+}
+
+/* Media queries pro responsivní design */
+@media (max-width: 768px) {
+    .recipe-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 položky na řádku na menších obrazovkách */
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-list {
+        grid-template-columns: 1fr; /* 1 položka na řádku na velmi malých obrazovkách */
+    }
 }

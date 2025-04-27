@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import "../styles/Cart.css"; // Import CSS pro tuto komponentu
-import { getDeclinedUnit } from "../utils/units.js"; // Importujeme funkci pro skloňování jednotek
+import "../styles/Cart.css";
+import { getDeclinedUnit } from "../utils/units.js";
+import QRCode from "react-qr-code"; // QR kód knihovna
+
+// Funkce na odstranění diakritiky
+const removeDiacritics = (text) => {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+};
 
 const ShoppingList = () => {
     const [mergedIngredients, setMergedIngredients] = useState([]);
+    const [showQRCode, setShowQRCode] = useState(false);
 
-    // Funkce pro sloučení ingrediencí a jejich agregaci
+    // Sloučení ingrediencí (sečtení stejných položek)
     const mergeIngredients = (ingredients) => {
         const map = new Map();
-
         ingredients.forEach(({ name, quantity, unit }) => {
-            if (quantity === null || quantity === undefined) {
-                return; // Ignorujeme ingredience s null nebo undefined množstvím
-            }
-
+            if (quantity == null) return;
             const key = `${name}-${unit}`;
             if (map.has(key)) {
                 map.get(key).quantity += Number(quantity);
@@ -21,53 +24,79 @@ const ShoppingList = () => {
                 map.set(key, { name, quantity: Number(quantity), unit });
             }
         });
-
         return Array.from(map.values());
     };
 
-    // Funkce pro načtení ingrediencí z localStorage
+    // Načtení ingrediencí z localStorage
     const getIngredientsFromLocalStorage = () => {
         const stored = localStorage.getItem("cart");
         return stored ? JSON.parse(stored) : [];
     };
 
-    // Načteme ingredience při renderování
+    // Při každém načtení komponenty načteme košík
     const storedIngredients = getIngredientsFromLocalStorage();
-    const merged = mergeIngredients(storedIngredients); // Sloučíme ingredience a agregujeme je
+    const merged = mergeIngredients(storedIngredients);
 
-    // Funkce pro vysypání košíku
+    // Vyprázdnění košíku
     const handleClearCart = () => {
         localStorage.removeItem("cart");
-        setMergedIngredients([]); // Vyprázdnění seznamu ingrediencí v UI
+        setMergedIngredients([]);
     };
 
-    // Funkce pro tisk seznamu
+    // Vytisknutí seznamu
     const handlePrint = () => {
         window.print();
+    };
+
+    // Vytvoření textu pro QR kód (bez diakritiky)
+    const generateShoppingListText = () => {
+        return merged
+            .map(item =>
+                `${removeDiacritics(item.name)} ${item.quantity} ${removeDiacritics(getDeclinedUnit(item.unit, item.quantity))}`
+            )
+            .join("\n");
+    };
+
+    // Zobrazení QR kódu
+    const handleGenerateQR = () => {
+        setShowQRCode(true);
     };
 
     return (
         <div className="shopping-list-container">
             <h1>Nákupní seznam</h1>
+
             {merged.length === 0 ? (
                 <p>Seznam je prázdný.</p>
             ) : (
                 <ul>
                     {merged.map((item, index) => (
-                        item.quantity !== null && item.quantity !== undefined && (
-                            <li key={index}>
-                                {item.name} {item.quantity} {getDeclinedUnit(item.unit, item.quantity)}
-                            </li>
-                        )
+                        <li key={index}>
+                            <span className="ingredient-name">{item.name}</span>
+                            <span className="ingredient-quantity">{item.quantity}</span>
+                            <span className="ingredient-unit">{getDeclinedUnit(item.unit, item.quantity)}</span>
+                        </li>
                     ))}
                 </ul>
             )}
+
             {merged.length > 0 && (
                 <div className="buttons-container">
                     <button onClick={handlePrint}>Tisknout</button>
                     <button onClick={handleClearCart}>Vysypat košík</button>
+                    <button onClick={handleGenerateQR}>Vygeneruj QR kód</button>
                 </div>
             )}
+
+            {showQRCode && (
+                <div className="qr-code-container">
+                    <div>
+                        <QRCode value={generateShoppingListText()} size={256} />
+                    </div>
+                    <p style={{ textAlign: "center", marginTop: "8px" }}>Naskenuj mě!</p>
+                </div>
+            )}
+
         </div>
     );
 };

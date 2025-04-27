@@ -2,7 +2,7 @@
   {
     "title": "Řecký salát",
     "description": "Osvěžující salát s okurkou, rajčaty, olivami a fetou.",
-    "image": "/images/salaty/recky-salat.jpg",
+    "image": "https://cdn.administrace.tv/2022/08/07/small_169/fcd385bc69ae78716fc13ccc6cf3b345.jpg",
     "link": "/salat/recky-salat",
     "ingredients": [
       { "name": "rajče", "quantity": 2, "unit": "ks" },
@@ -29,7 +29,7 @@
   {
     "title": "Cizrnový salát",
     "description": "Výživný salát s cizrnou, paprikou a bylinkami.",
-    "image": "/images/salaty/cizrnovej.jpg",
+    "image": "https://cdn.administrace.tv/2025/01/13/small_169/3b5211a9517d3aff5f37975db64c49b2.jpg",
     "link": "/salat/cizrnovy-salat",
     "ingredients": [
       { "name": "cizrna", "quantity": 1, "unit": "konzerva" },
@@ -55,7 +55,7 @@
   {
     "title": "Těstovinový salát",
     "description": "Barevný salát s těstovinami, zeleninou a jogurtovým dresinkem.",
-    "image": "/images/salaty/testovinovy.jpg",
+    "image": "https://media.istockphoto.com/id/1216211251/cs/fotografie/zdrav%C3%A9-fusilli-pasta-sal%C3%A1t-b%C3%ADl%C3%A9-pozad%C3%AD.jpg?s=612x612&w=0&k=20&c=npS2eWZWKbgib6E-5Sl1aQSAM9xmVNRTBYlfH4EWFEw=",
     "link": "/salat/testovinovy-salat",
     "ingredients": [
       { "name": "těstoviny", "quantity": 150, "unit": "g" },
@@ -81,7 +81,7 @@
   {
     "title": "Mrkvový salát s jablky",
     "description": "Sladkokyselý salát z čerstvé mrkve a jablek.",
-    "image": "/images/salaty/mrkvovy-s-jablky.jpg",
+    "image": "https://www.vegan.cz/wp-content/uploads/2023/03/mrkvovy-salat-recept-1024x683.jpg",
     "link": "/salat/mrkvovy-s-jablky",
     "ingredients": [
       { "name": "mrkev", "quantity": 2, "unit": "ks" },
@@ -101,7 +101,7 @@
   {
     "title": "Salát s tuňákem",
     "description": "Lehký salát s tuňákem, vejcem a zeleninou.",
-    "image": "/images/salaty/s-tunakem.jpg",
+    "image": "https://cdn.administrace.tv/2022/08/06/small_169/f2c1276000a916bf8cac798c61214f43.jpg",
     "link": "/salat/salat-s-tunakem",
     "ingredients": [
       { "name": "listový salát", "quantity": 2, "unit": "hrsti" },

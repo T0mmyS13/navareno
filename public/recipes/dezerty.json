@@ -2,7 +2,7 @@
   {
     "title": "Bábovka",
     "description": "Tradiční česká mramorová bábovka, vláčná a voňavá.",
-    "image": "/images/dezerty/babovka.jpg",
+    "image": "https://img-new.mimibazar.cz/h/bc/c/babovka-recept-peceni-moucnik-1.jpg",
     "link": "/dezert/babovka",
     "ingredients": [
       { "name": "hladká mouka", "quantity": 300, "unit": "g" },
@@ -27,7 +27,7 @@
   {
     "title": "Jablečný závin",
     "description": "Klasický štrůdl plněný jablky, skořicí a ořechy.",
-    "image": "/images/dezerty/zavin.jpg",
+    "image": "https://media.istockphoto.com/id/482134685/cs/fotografie/v%C3%ADde%C5%88sk%C3%BD-jable%C4%8Dn%C3%BD-z%C3%A1vin.jpg?s=612x612&w=0&k=20&c=Zci3Bn4f7IXL64wDfO-jepubXF1cLkoZJF9LTnGbEyo=",
     "link": "/dezert/jablecny-zavin",
     "ingredients": [
       { "name": "listové těsto", "quantity": 1, "unit": "balení" },
@@ -50,7 +50,7 @@
   {
     "title": "Tiramisu",
     "description": "Italský dezert s mascarpone, kávou a piškoty.",
-    "image": "/images/dezerty/tiramisu.jpg",
+    "image": "https://plus.unsplash.com/premium_photo-1695028378225-97fbe39df62a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VGlyYW1pc3V8ZW58MHx8MHx8fDA%3D",
     "link": "/dezert/tiramisu",
     "ingredients": [
       { "name": "mascarpone", "quantity": 250, "unit": "g" },
@@ -73,7 +73,7 @@
   {
     "title": "Palačinky",
     "description": "Tenoučké palačinky, které můžete naplnit dle chuti.",
-    "image": "/images/dezerty/palacinky.jpg",
+    "image": "https://images.unsplash.com/photo-1597524305544-cd821476715f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhbmNha2VzfGVufDB8fDB8fHww",
     "link": "/dezert/palacinky",
     "ingredients": [
       { "name": "hladká mouka", "quantity": 200, "unit": "g" },
@@ -94,7 +94,7 @@
   {
     "title": "Čokoládový dort",
     "description": "Bohatý čokoládový dort pro milovníky sladkého.",
-    "image": "/images/dezerty/cokoladovy-dort.jpg",
+    "image": "https://images.unsplash.com/photo-1607257882338-70f7dd2ae344?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "link": "/dezert/cokoladovy-dort",
     "ingredients": [
       { "name": "hladká mouka", "quantity": 200, "unit": "g" },
