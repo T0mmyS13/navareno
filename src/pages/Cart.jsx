@@ -9,7 +9,7 @@ const removeDiacritics = (text) => {
 };
 
 const ShoppingList = () => {
-    const [mergedIngredients, setMergedIngredients] = useState([]);
+    const [setMergedIngredients] = useState([]);
     const [showQRCode, setShowQRCode] = useState(false);
 
     // Sloučení ingrediencí (sečtení stejných položek)
