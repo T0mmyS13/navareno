@@ -1,132 +1,169 @@
+/* Hlavní styl pro detaily receptu */
 .recipe-detail {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Maximální šířka pro detaily receptu */
+    margin: 0 auto; /* Vycentrování */
+    padding: 20px; /* Vnitřní odsazení */
+    background: white; /* Bílé pozadí */
+    border-radius: 10px; /* Zaoblení rohů */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stín kolem boxu */
 }
 
+/* Hero sekce pro obrázek receptu */
 .hero {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 300px; /* Výška pro hero sekci */
     border-radius: 10px;
-    overflow: hidden;
+    overflow: hidden; /* Zajišťuje, že obrázek nepřeteče */
 }
 
 .recipe-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(70%);
+    width: 100%; /* Obrázek zabírá celou šířku */
+    height: 100%; /* Obrázek zabírá celou výšku */
+    object-fit: cover; /* Pokrytí obrázkem celé oblasti */
+    filter: brightness(70%); /* Snížení jasu pro lepší čitelnost textu */
 }
 
 .hero-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+    transform: translate(-50%, -50%); /* Vystředění overlay textu */
+    background: rgba(0, 0, 0, 0.6); /* Polotransparentní pozadí */
+    color: white; /* Bílé písmo */
+    padding: 20px; /* Vnitřní odsazení pro text */
+    border-radius: 10px; /* Zaoblení rohů */
+    text-align: center; /* Vycentrování textu */
 }
 
+/* Hlavní obsah receptu */
 .recipe-content {
-    padding: 20px;
+    padding: 20px; /* Vnitřní odsazení */
 }
 
+/* Odstavec pro informace o receptu */
 .recipe-info p {
-    margin: 5px 0;
-    font-size: 16px;
+    margin: 5px 0; /* Okraje mezi odstavci */
+    font-size: 16px; /* Velikost písma */
 }
 
 h2 {
-    margin-top: 20px;
+    margin-top: 20px; /* Mezery nad nadpisy */
 }
 
 ul, ol {
-    margin-left: 20px;
+    margin-left: 20px; /* Vlevo odsazení pro seznamy */
 }
 
-
-
-/* Stylování vstupního pole pro počet porcí */
+/* Styl pro vstupní pole pro počet porcí */
 .recipe-content input#portion-count {
-    width: 60px;
-    padding: 5px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
+    width: 60px; /* Šířka inputu */
+    padding: 5px; /* Vnitřní odsazení */
+    font-size: 15px; /* Velikost písma */
+    border: 1px solid #ccc; /* Okraj inputu */
+    border-radius: 5px; /* Zaoblení rohů */
+    text-align: center; /* Vycentrování textu */
 }
 
+/* Styl pro zpětné tlačítko */
 .back-button {
     display: block;
     text-align: center;
-    background: #ff6b6b;
-    color: white;
+    background: #ff6b6b; /* Červené pozadí */
+    color: white; /* Bílé písmo */
     padding: 10px;
     margin-top: 20px;
-    border-radius: 5px;
-    text-decoration: none;
+    border-radius: 5px; /* Zaoblení rohů */
+    text-decoration: none; /* Bez podtržení */
 }
 
 .back-button:hover {
-    background: #e63946;
+    background: #e63946; /* Tmavší červená při hoveru */
 }
+
+/* Styl pro tlačítko "Přidat do nákupního seznamu" */
 .cart-button {
     display: block;
     text-align: center;
-    background: #4CAF50;
-    color: white;
+    background: #4CAF50; /* Zelené pozadí */
+    color: white; /* Bílé písmo */
     padding: 10px;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 5px; /* Zaoblení rohů */
     text-decoration: none;
     border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
-
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Stín kolem tlačítka */
 }
 
 .cart-button:hover {
-    background: #45a049;
-    cursor: pointer;
-
+    background: #45a049; /* Tmavší zelená při hoveru */
+    cursor: pointer; /* Ukazatel na ruku při hoveru */
 }
 
-/* Styl pro toast notification */
-/* Toast styles */
+/* Responzivní úpravy pro menší obrazovky */
+@media screen and (max-width: 600px) {
+    /* Zmenšení paddingu v detailu receptu pro mobilní zařízení */
+    .recipe-detail {
+        padding: 15px; /* Menší odsazení */
+    }
+
+    /* Úprava velikosti textu a odsazení pro mobilní zařízení */
+    .recipe-content {
+        padding: 15px; /* Menší odsazení */
+    }
+
+    /* Úprava výšky hero obrázku pro mobilní zařízení */
+    .hero {
+        height: 200px; /* Menší výška obrázku pro mobilní zařízení */
+    }
+
+    /* Změna filtru pro mobilní zařízení */
+    .recipe-image {
+        filter: brightness(50%); /* Mírnější filtr pro mobil */
+    }
+
+    /* Zúžení inputu pro počet porcí */
+    .recipe-content input#portion-count {
+        width: 50px; /* Užší input */
+    }
+
+    /* Změna velikosti tlačítek pro mobilní zařízení */
+    .back-button,
+    .cart-button {
+        padding: 8px; /* Menší padding */
+    }
+}
+
+/* Styl pro toast notifikace */
 .toast {
     position: fixed;
     top: 20px;
     left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transform: translateX(-50%); /* Vycentrování toastu */
+    background-color: rgba(0, 0, 0, 0.7); /* Polotransparentní pozadí */
+    color: white; /* Bílé písmo */
+    padding: 10px 20px; /* Vnitřní odsazení */
+    border-radius: 5px; /* Zaoblení rohů */
+    z-index: 999; /* Zajištění, že toast bude nad jinými prvky */
+    opacity: 0; /* Začíná skrytý */
+    transition: opacity 0.3s ease-in-out; /* Plynulé zobrazení a skrytí */
+    max-width: 90%; /* Maximální šířka toastu pro mobilní zařízení */
+    box-sizing: border-box; /* Zahrnuje padding do šířky */
 }
 
 .toast.show {
-    opacity: 1;
+    opacity: 1; /* Viditelný toast */
 }
 
+/* Různé barvy pro různé typy toastů */
 .toast.success {
-    background-color: #4caf50;
+    background-color: #4caf50; /* Zelená pro úspěch */
 }
 
 .toast.error {
-    background-color: #f44336;
+    background-color: #f44336; /* Červená pro chyby */
 }
 
 .toast.info {
-    background-color: #2196f3;
+    background-color: #2196f3; /* Modrá pro informace */
 }
-

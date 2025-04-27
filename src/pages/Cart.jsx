@@ -9,7 +9,7 @@ const removeDiacritics = (text) => {
 };
 
 const ShoppingList = () => {
-    const [setMergedIngredients] = useState([]);
+    const [MergedIngredients,setMergedIngredients] = useState([]);
     const [showQRCode, setShowQRCode] = useState(false);
 
     // Sloučení ingrediencí (sečtení stejných položek)
@@ -40,7 +40,9 @@ const ShoppingList = () => {
     // Vyprázdnění košíku
     const handleClearCart = () => {
         localStorage.removeItem("cart");
+        setShowQRCode(false);
         setMergedIngredients([]);
+
     };
 
     // Vytisknutí seznamu

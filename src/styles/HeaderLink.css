@@ -1,5 +1,7 @@
 .quick-links {
     display: grid;
+    align-items: center;
+    justify-items: center;
     grid-template-columns: repeat(7, 1fr); /* vsechny položky na řádku */
     gap: 20px; /* Zvýšení mezery mezi položkami */
     margin: 20px auto; /* Center the component */

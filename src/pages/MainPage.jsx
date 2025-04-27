@@ -2,6 +2,7 @@ import React from "react";
 import Category from "../atoms/Category.jsx";
 import "../styles/MainPage.css";
 
+// Data pro jednotlivé kategorie jídel
 const categories = [
     { title: "Předkrmy", link: "/predkrmy", description: "Malé lahůdky, které vás skvěle naladí na hlavní chod.", image: "/images/predkrmy.jpg" },
     { title: "Polévky", link: "/polevky", description: "Hřejivé a chutné polévky pro každou příležitost.", image: "/images/polevky.jpg" },
@@ -11,10 +12,12 @@ const categories = [
     { title: "Nápoje", link: "/napoje", description: "Osvěžující i hřejivé nápoje pro každou chvíli.", image: "/images/napoje.jpg" },
 ];
 
+// Hlavní komponenta hlavní stránky
 const MainPage = () => {
     return (
-        <div className="container">
+        <div className="container"> {/* Hlavní obalovací div */}
 
+            {/* Úvodní hero sekce s obrázkem a nadpisem */}
             <div className="hero">
                 <img src="/images/hero.jpg" alt="Navařeno" className="hero-image" />
                 <div className="hero-overlay">
@@ -23,13 +26,14 @@ const MainPage = () => {
                 </div>
             </div>
 
+            {/* Úvodní nadpis sekce kategorií */}
             <h2 className="section-title">Vyberte si z našich chutných kategorií</h2>
             <p className="section-subtitle">Od předkrmu až po dezert</p>
 
-            {/* Kategorií s obrázky */}
+            {/* Mřížka s kategoriemi */}
             <div className="category-grid">
                 {categories.map((cat) => (
-                    <Category key={cat.title} {...cat} />
+                    <Category key={cat.title} {...cat} /> // Vykreslení jednotlivých kategorií
                 ))}
             </div>
         </div>

@@ -1,17 +1,21 @@
+/* Import fontu Roboto z Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* Resetování základních stylů pro všechny elementy */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Základní styly pro tělo stránky */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f7f7f7;
   color: #333;
 }
 
+/* Hlavní kontejner stránky */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -22,6 +26,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Sekce s hlavním obrázkem */
 .hero {
   position: relative;
   width: 100%;
@@ -30,13 +35,15 @@ body {
   border-radius: 10px;
 }
 
+/* Obrázek v hero sekci */
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(60%);
+  filter: brightness(60%); /* Ztmavení obrázku pro lepší čitelnost textu */
 }
 
+/* Překryvný text přes obrázek */
 .hero-overlay {
   position: absolute;
   top: 50%;
@@ -49,6 +56,7 @@ body {
   border-radius: 10px;
 }
 
+/* Hlavní název stránky */
 .main-title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -56,6 +64,7 @@ body {
   letter-spacing: 1px;
 }
 
+/* Podnadpis stránky */
 .subtitle {
   font-size: 1.1rem;
   font-weight: 400;
@@ -63,6 +72,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* Název sekce s kategoriemi */
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -70,12 +80,14 @@ body {
   color: #222;
 }
 
+/* Podtitulek sekce */
 .section-subtitle {
   font-size: 1.2rem;
   color: #777;
   margin-bottom: 30px;
 }
 
+/* Mřížka pro výpis kategorií */
 .category-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -84,12 +96,14 @@ body {
   justify-content: center;
 }
 
+/* Responzivita: úprava mřížky pro tablety */
 @media (max-width: 768px) {
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Responzivita: úprava mřížky pro mobily */
 @media (max-width: 480px) {
   .category-grid {
     grid-template-columns: 1fr;

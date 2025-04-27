@@ -3,26 +3,34 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import "../styles/CategoryPage.css";
 import Food from "../atoms/Food.jsx";
 
+// Komponenta pro stránku konkrétní kategorie receptů
 const CategoryPage = () => {
+    // Získání názvu kategorie z URL
     const { category } = useParams();
     const navigate = useNavigate();
+
+    // Stav pro seznam receptů
     const [recipes, setRecipes] = useState([]);
+
+    // Stav pro aktuálně vybrané kritérium řazení
     const [sortCriteria, setSortCriteria] = useState("");
+
+    // Slovník pro překlad slugů kategorií na hezké názvy
     const categoryTitles = {
         "predkrmy": "Předkrmy",
-        "polevky": "Polevky",
-        "salaty": "Salaty",
+        "polevky": "Polévky",
+        "salaty": "Saláty",
         "hlavni-chody": "Hlavní chody",
         "dezerty": "Dezerty",
         "napoje": "Nápoje",
     };
 
-    // Načítání receptů dynamicky ze složky public/recipes
+    // Načítání receptů při změně kategorie
     useMemo(() => {
         fetch(`/recipes/${category}.json`)
             .then((response) => response.json())
             .then((data) => {
-                // Načtení hodnocení pro každý recept z localStorage
+                // Aktualizace načtených receptů s uloženým hodnocením z localStorage
                 const updatedRecipes = data.map((recipe) => {
                     const savedRating = localStorage.getItem(`rating-${recipe.title}`);
                     const savedVotes = localStorage.getItem(`votes-${recipe.title}`);
@@ -40,11 +48,11 @@ const CategoryPage = () => {
             .catch((error) => console.error("Chyba při načítání receptů:", error));
     }, [category]);
 
-    // Funkce pro řazení receptů
+    // Vytvoření seřazeného seznamu receptů na základě zvoleného kritéria
     const sortedRecipes = useMemo(() => {
         let sortedArray = [...recipes];
         if (sortCriteria === "rating") {
-            sortedArray.sort((a, b) => b.rating - a.rating);
+            sortedArray.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
         } else if (sortCriteria === "difficulty") {
             sortedArray.sort((a, b) => a.difficulty - b.difficulty);
         } else if (sortCriteria === "time") {
@@ -53,6 +61,7 @@ const CategoryPage = () => {
         return sortedArray;
     }, [recipes, sortCriteria]);
 
+    // Funkce pro náhodné přesměrování na detail náhodného receptu
     const handleRandomRecipe = () => {
         if (sortedRecipes.length > 0) {
             const randomRecipe = sortedRecipes[Math.floor(Math.random() * sortedRecipes.length)];
@@ -62,6 +71,7 @@ const CategoryPage = () => {
 
     return (
         <div className="category-page">
+            {/* Hero sekce */}
             <div className="hero">
                 <img
                     src={`/images/${category}.jpg`}
@@ -74,6 +84,7 @@ const CategoryPage = () => {
                 </div>
             </div>
 
+            {/* Ovládací prvky (zpět, náhodný recept, řazení) */}
             <div className="header-controls">
                 <Link to={"/"} className="back-button">Zpět na hlavní stránku</Link>
                 <div className="random-recipe-container">
@@ -91,6 +102,7 @@ const CategoryPage = () => {
                 </div>
             </div>
 
+            {/* Výpis receptů */}
             <div className="recipe-list">
                 {sortedRecipes.map((recipe) => (
                     <Food
