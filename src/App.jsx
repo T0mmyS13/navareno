@@ -6,6 +6,9 @@ import RecipeDetail from "./pages/RecipeDetail";
 import HeaderLink from "./atoms/HeaderLink.jsx";
 import AddRecipePage from "./pages/NewRecipe.jsx";
 import Cart from "./pages/Cart.jsx";
+import loadCategoriesToLocalStorage from "./utils/loadCategoriesToLocalStorage.js";
+
+loadCategoriesToLocalStorage();
 
 const App = () => {
     return (

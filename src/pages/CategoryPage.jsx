@@ -27,11 +27,9 @@ const CategoryPage = () => {
 
     // Načítání receptů při změně kategorie
     useMemo(() => {
-        fetch(`/recipes/${category}.json`)
-            .then((response) => response.json())
-            .then((data) => {
-                // Aktualizace načtených receptů s uloženým hodnocením z localStorage
-                const updatedRecipes = data.map((recipe) => {
+        const storedRecipes = localStorage.getItem(category);
+        if (storedRecipes) {
+            const parsedRecipes = JSON.parse(storedRecipes).map((recipe) => {
                     const savedRating = localStorage.getItem(`rating-${recipe.title}`);
                     const savedVotes = localStorage.getItem(`votes-${recipe.title}`);
                     const averageRating = savedRating ? parseFloat(savedRating).toFixed(1) : recipe.rating;
@@ -43,9 +41,10 @@ const CategoryPage = () => {
                         ratingsCount: votes,
                     };
                 });
-                setRecipes(updatedRecipes);
-            })
-            .catch((error) => console.error("Chyba při načítání receptů:", error));
+            setRecipes(parsedRecipes);
+        } else {
+            console.error("Žádné recepty nebyly nalezeny v localStorage pro kategorii:", category);
+        }
     }, [category]);
 
     // Vytvoření seřazeného seznamu receptů na základě zvoleného kritéria

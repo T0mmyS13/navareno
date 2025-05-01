@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Box, Typography, Grid, IconButton, Divider } from "@mui/material";
+import { TextField, Button, Box, Typography, Grid, IconButton, Divider,MenuItem } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
 
 const AddRecipePage = () => {
@@ -9,8 +9,8 @@ const AddRecipePage = () => {
     const [instructions, setInstructions] = useState([""]);
     const [time, setTime] = useState("");
     const [difficulty, setDifficulty] = useState(1);
+    const [category, setCategory] = useState("");
     const [image, setImage] = useState("");
-
     const handleAddIngredient = () => {
         setIngredients([...ingredients, { name: "", quantity: "", unit: "" }]);
     };
@@ -33,6 +33,11 @@ const AddRecipePage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const normalizedCategory = category
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, ""); // Remove diacritics
+
         const newRecipe = {
             title,
             description,
@@ -43,17 +48,44 @@ const AddRecipePage = () => {
             image,
             rating: null,
         };
-        console.log("Nový recept:", newRecipe);
+
+        // Retrieve existing recipes for the normalized category
+        const storedRecipes = JSON.parse(localStorage.getItem(normalizedCategory)) || [];
+
+        // Add the new recipe to the list
+        const updatedRecipes = [...storedRecipes, newRecipe];
+
+        // Save the updated list back to localStorage
+        localStorage.setItem(normalizedCategory, JSON.stringify(updatedRecipes));
+
+        alert("Recept byl úspěšně přidán!");
     };
 
     return (
-        <Box sx={{ padding: 3, maxWidth: "85%", margin: "auto" }}>
+        <Box sx={{ padding: 3, maxWidth: "65%", margin: "auto" }}>
             <Typography variant="h4" gutterBottom>
                 Přidat nový recept
             </Typography>
 
             <form onSubmit={handleSubmit}>
                 <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                        <TextField
+                            select
+                            label="Kategorie"
+                            variant="outlined"
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)}
+                            sx={{ minWidth: 120 }}
+                            required
+                        >
+                            {["předkrmy","polévky","saláty", "hlavní chody", "dezerty","nápoje"].map((option) => (
+                                <MenuItem key={option} value={option}>
+                                    {option.charAt(0).toUpperCase() + option.slice(1)}
+                                </MenuItem>
+                            ))}
+                        </TextField>
+                    </Grid>
                     {/* Název, popis, obrázek, odkaz */}
                     <Grid item xs={12}>
                         <TextField
@@ -103,11 +135,11 @@ const AddRecipePage = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <TextField
-                            label="Složitost (1-5)"
+                            label="Složitost (1-3)"
                             variant="outlined"
                             fullWidth
                             type="number"
-                            inputProps={{ min: 1, max: 5 }}
+                            inputProps={{ min: 1, max: 3 }}
                             value={difficulty}
                             onChange={(e) => setDifficulty(e.target.value)}
                             required
@@ -222,3 +254,4 @@ const AddRecipePage = () => {
 };
 
 export default AddRecipePage;
+

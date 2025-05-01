@@ -18,18 +18,16 @@ const RecipeDetail = () => {
 
     // Funkce pro načítání dat receptu podle kategorie a názvu
     const fetchRecipe = () => {
-        fetch(`/recipes/${category}.json`)
-            .then((response) => response.json())
-            .then((data) => {
-                const foundRecipe = data.find(
+        const storedRecipes = JSON.parse(localStorage.getItem(category)) || [];
+        const foundRecipe = storedRecipes.find(
                     (r) => r.title.toLowerCase() === recipeName.toLowerCase()
                 );
                 if (foundRecipe) {
                     setRecipe(foundRecipe);
                     setAdjustedIngredients(foundRecipe.ingredients); // Nastavíme i základní ingredience
+        } else {
+            console.error("Recept nebyl nalezen.");
                 }
-            })
-            .catch((error) => console.error("Chyba při načítání receptu:", error));
     };
 
     // Pokud recept není načtený, spustíme jeho načítání
