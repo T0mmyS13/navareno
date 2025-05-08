@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Cart.css";
-import { getDeclinedUnit } from "../utils/units.js";
+import {convertUnits, getDeclinedUnit} from "../utils/units.js";
 import QRCode from "react-qr-code"; // QR kód knihovna
 
 // Funkce na odstranění diakritiky
@@ -21,10 +21,19 @@ const ShoppingList = () => {
             if (map.has(key)) {
                 map.get(key).quantity += Number(quantity);
             } else {
-                map.set(key, { name, quantity: Number(quantity), unit });
+                map.set(key, {
+                    name,
+                    quantity: Number(quantity),
+                    unit,
+                });
             }
         });
-        return Array.from(map.values());
+
+        // Převod jednotek po sloučení
+        return Array.from(map.values()).map(({ name, quantity, unit }) => {
+            const { quantity: convertedQuantity, unit: convertedUnit } = convertUnits(quantity, unit);
+            return { name, quantity: convertedQuantity, unit: convertedUnit };
+        });
     };
 
     // Načtení ingrediencí z localStorage

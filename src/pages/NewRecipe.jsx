@@ -48,9 +48,16 @@ const AddRecipePage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        if (isNaN(time) || time <= 0 || ingredients.some(ing => isNaN(ing.quantity) || ing.quantity <= 0)) {
+            showToast("Čas a množství musí být platná čísla", "error");
+            return;
+        }
+
         const normalizedCategory = category
+            .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, ""); // Remove diacritics
+            .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+            .replace(/\s+/g, "-"); // Replace spaces with hyphens
 
         const newRecipe = {
             title,
@@ -83,7 +90,7 @@ const AddRecipePage = () => {
             </Typography>
 
             <form onSubmit={handleSubmit}>
-                <Grid container spacing={3}>
+                <Grid container spacing={1}>
                     <Grid item xs={12}>
                         <TextField
                             select
@@ -143,6 +150,7 @@ const AddRecipePage = () => {
                             variant="outlined"
                             fullWidth
                             type="number"
+                            InputProps={{ inputProps: { min: 1 } }} // Prevent negative values
                             value={time}
                             onChange={(e) => setTime(e.target.value)}
                             required
@@ -193,6 +201,7 @@ const AddRecipePage = () => {
                                     variant="outlined"
                                     type="number"
                                     value={ingredient.quantity}
+                                    InputProps={{ inputProps: { min: 0 } }} // Prevent negative values
                                     onChange={(e) =>
                                         setIngredients(
                                             ingredients.map((ing, i) =>
@@ -239,7 +248,7 @@ const AddRecipePage = () => {
                             Postup:
                         </Typography>
                         {instructions.map((instruction, index) => (
-                            <Box key={index} sx={{ display: "flex", alignItems: "center", marginBottom: 2}}>
+                            <Box key={index} sx={{ display: "flex", alignItems: "center", marginBottom: 2, width: "266%" }}>
                                 <TextField
                                     label={`Krok ${index + 1}`}
                                     variant="outlined"

@@ -18,3 +18,12 @@ export const getDeclinedUnit = (unit, quantity) => {
     if (quantity < 5) return forms[1];           // 2–4 kusy
     return forms[2];                             // 5 a více kusů
 };
+export const convertUnits = (quantity, unit) => {
+    if (unit === "ml" && quantity >= 1000) {
+        return { quantity: quantity / 1000, unit: "l" };
+    }
+    if (unit === "g" && quantity >= 1000) {
+        return { quantity: quantity / 1000, unit: "kg" };
+    }
+    return { quantity, unit };
+};

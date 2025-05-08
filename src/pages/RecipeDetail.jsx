@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/RecipeDetail.css";
 import FoodItem from "../atoms/FoodItem.jsx";
-import { getDeclinedUnit } from "../utils/units.js";
+import {convertUnits, getDeclinedUnit} from "../utils/units.js";
 import { DataGrid } from "@mui/x-data-grid";
 import { useToast } from "../utils/ToastNotify.jsx";
 import Checkbox from '@mui/material/Checkbox'; // Importujeme MUI Checkbox
@@ -71,7 +71,10 @@ const RecipeDetail = () => {
                 recipe.ingredients,
                 2,
                 newPortionCount
-            );
+            ).map(ingredient => {
+                const { quantity, unit } = convertUnits(ingredient.quantity, ingredient.unit);
+                return { ...ingredient, quantity, unit };
+            });
             setAdjustedIngredients(adjusted);
         }
     };

@@ -85,7 +85,7 @@
       { "name": "cibule", "quantity": 1, "unit": "ks" },
       { "name": "kmín", "quantity": 1, "unit": "lžička" },
       { "name": "jablko", "quantity": 1, "unit": "ks" },
-      { "name": "bramborový knedlík", "quantity": 1, "unit": "porce" }
+      { "name": "bramborový knedlík", "quantity": 1, "unit": "ks" }
     ],
     "instructions": [
       "Kachnu osolte, okmínujte a vložte do pekáče.",
