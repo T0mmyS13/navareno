@@ -84,7 +84,7 @@
       {"name": "vývar", "quantity": 500, "unit": "ml"},
       {"name": "smetana", "quantity": 100, "unit": "ml"},
       {"name": "máslo", "quantity": 1, "unit": "lžíce"},
-      {"name": "čerstvá máta", "quantity": 3, "unit": "lístky"}
+      {"name": "čerstvá máta", "quantity": 3, "unit": "lístek"}
     ],
     "instructions": [
       "Na másle osmahněte cibuli do sklovata.",

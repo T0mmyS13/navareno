@@ -29,7 +29,7 @@
     "ingredients": [
       { "name": "bílý rum", "quantity": 50, "unit": "ml" },
       { "name": "limetka", "quantity": 1, "unit": "ks" },
-      { "name": "máta", "quantity": 8, "unit": "lístků" },
+      { "name": "máta", "quantity": 8, "unit": "lístek" },
       { "name": "cukr", "quantity": 2, "unit": "lžičky" },
       { "name": "perlivá voda", "quantity": 100, "unit": "ml" },
       { "name": "led", "quantity": 1, "unit": "hrst" }
@@ -73,7 +73,7 @@
     "ingredients": [
       { "name": "máta", "quantity": 8, "unit": "lístků" },
       { "name": "limetka", "quantity": 1, "unit": "ks" },
-      { "name": "cukr", "quantity": 2, "unit": "lžičky" },
+      { "name": "cukr", "quantity": 2, "unit": "lžička" },
       { "name": "perlivá voda", "quantity": 200, "unit": "ml" },
       { "name": "led", "quantity": 1, "unit": "hrst" }
     ],

@@ -7,7 +7,7 @@
     "ingredients": [
       {"name": "chléb", "quantity": 1, "unit": "plátek"},
       {"name": "rajče", "quantity": 1, "unit": "ks"},
-      {"name": "bazalka", "quantity": 5, "unit": "lístků"},
+      {"name": "bazalka", "quantity": 5, "unit": "lístek"},
       {"name": "olivový olej", "quantity": 1, "unit": "lžička"}
     ],
     "instructions": [
@@ -76,7 +76,7 @@
       {"name": "kyselá okurka", "quantity": 1, "unit": "ks"},
       {"name": "červená cibule", "quantity": 0.25, "unit": "ks"},
       {"name": "hořčice", "quantity": 1, "unit": "lžička"},
-      {"name": "chléb", "quantity": 2, "unit": "plátky"}
+      {"name": "chléb", "quantity": 2, "unit": "plátek"}
     ],
     "instructions": [
       "Řepu upečte nebo uvařte do měkka a nastrouhejte.",
