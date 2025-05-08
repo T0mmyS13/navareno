@@ -34,7 +34,7 @@
 /* Styl pro informace o jídle, jako čas přípravy a obtížnost */
 .food-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 14px;
     margin-top: 10px;
 }

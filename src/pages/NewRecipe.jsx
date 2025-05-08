@@ -1,6 +1,18 @@
 import React, { useState } from "react";
-import { TextField, Button, Box, Typography, Grid, IconButton, Divider,MenuItem } from "@mui/material";
+import {
+    TextField,
+    Button,
+    Box,
+    Typography,
+    Grid,
+    IconButton,
+    Divider,
+    MenuItem,
+    FormControl,
+    InputLabel, Select, Autocomplete
+} from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
+import {useToast} from "../utils/ToastNotify.jsx";
 
 const AddRecipePage = () => {
     const [title, setTitle] = useState("");
@@ -8,12 +20,14 @@ const AddRecipePage = () => {
     const [ingredients, setIngredients] = useState([{ name: "", quantity: "", unit: "" }]);
     const [instructions, setInstructions] = useState([""]);
     const [time, setTime] = useState("");
-    const [difficulty, setDifficulty] = useState(1);
+    const [difficulty, setDifficulty] = useState("");
     const [category, setCategory] = useState("");
     const [image, setImage] = useState("");
     const handleAddIngredient = () => {
         setIngredients([...ingredients, { name: "", quantity: "", unit: "" }]);
     };
+    const { showToast } = useToast();
+
 
     const handleRemoveIngredient = (index) => {
         const newIngredients = [...ingredients];
@@ -58,7 +72,8 @@ const AddRecipePage = () => {
         // Save the updated list back to localStorage
         localStorage.setItem(normalizedCategory, JSON.stringify(updatedRecipes));
 
-        alert("Recept byl úspěšně přidán!");
+        showToast("Recept přidán", "success");
+
     };
 
     return (
@@ -134,18 +149,22 @@ const AddRecipePage = () => {
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <TextField
-                            label="Složitost (1-3)"
-                            variant="outlined"
-                            fullWidth
-                            type="number"
-                            inputProps={{ min: 1, max: 3 }}
-                            value={difficulty}
-                            onChange={(e) => setDifficulty(e.target.value)}
-                            required
-                            sx={{ minWidth: 120}}
-                        />
+                        <FormControl fullWidth required sx={{ minWidth: 120 }}>
+                            <InputLabel id="difficulty-label">Složitost</InputLabel>
+                            <Select
+                                labelId="difficulty-label"
+                                id="difficulty"
+                                value={difficulty}
+                                label="Složitost"
+                                onChange={(e) => setDifficulty(Number(e.target.value))}
+                            >
+                                <MenuItem value={1}>Snadné</MenuItem>
+                                <MenuItem value={2}>Střední</MenuItem>
+                                <MenuItem value={3}>Obtížné</MenuItem>
+                            </Select>
+                        </FormControl>
                     </Grid>
+
 
                     <Divider sx={{ marginY: 3, width: "100%" }} />
 
@@ -183,18 +202,24 @@ const AddRecipePage = () => {
                                     }
                                     sx={{ marginRight: 1 }}
                                 />
-                                <TextField
-                                    label="Jednotka"
-                                    variant="outlined"
+                                <Autocomplete
+                                    options={["g", "kg", "ml", "l", "ks", "lžička", "lžíce", "hrst", "plátek", "stroužek", "konzerva", "lístek", "kulička", "hrnek"]}
                                     value={ingredient.unit}
-                                    onChange={(e) =>
+                                    onChange={(e, newValue) =>
                                         setIngredients(
                                             ingredients.map((ing, i) =>
-                                                i === index ? { ...ing, unit: e.target.value } : ing
+                                                i === index ? { ...ing, unit: newValue } : ing
                                             )
                                         )
                                     }
-                                    sx={{ marginRight: 1 }}
+                                    renderInput={(params) => (
+                                        <TextField
+                                            {...params}
+                                            label="Jednotka"
+                                            variant="outlined"
+                                    sx={{ marginRight: 8 }}
+                                />
+                                    )}
                                 />
                                 <IconButton onClick={() => handleRemoveIngredient(index)} color="error">
                                     <Remove />
@@ -214,7 +239,7 @@ const AddRecipePage = () => {
                             Postup:
                         </Typography>
                         {instructions.map((instruction, index) => (
-                            <Box key={index} sx={{ display: "flex", alignItems: "center", marginBottom: 2 }}>
+                            <Box key={index} sx={{ display: "flex", alignItems: "center", marginBottom: 2}}>
                                 <TextField
                                     label={`Krok ${index + 1}`}
                                     variant="outlined"
@@ -229,7 +254,6 @@ const AddRecipePage = () => {
                                             )
                                         )
                                     }
-                                    sx={{ marginRight: 1 }}
                                 />
                                 <IconButton onClick={() => handleRemoveInstruction(index)} color="error">
                                     <Remove />
@@ -247,6 +271,7 @@ const AddRecipePage = () => {
                     <Button variant="contained" color="primary" type="submit">
                         Přidat recept
                     </Button>
+
                 </Box>
             </form>
         </Box>

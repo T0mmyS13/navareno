@@ -8,9 +8,7 @@
       {"name": "chléb", "quantity": 1, "unit": "plátek"},
       {"name": "rajče", "quantity": 1, "unit": "ks"},
       {"name": "bazalka", "quantity": 5, "unit": "lístků"},
-      {"name": "olivový olej", "quantity": 1, "unit": "lžička"},
-      {"name": "sůl", "quantity": null, "unit": "špetka"},
-      {"name": "pepř", "quantity": null, "unit": "špetka"}
+      {"name": "olivový olej", "quantity": 1, "unit": "lžička"}
     ],
     "instructions": [
       "Opečte chléb na pánvi nebo v troubě do zlatova.",
@@ -33,9 +31,6 @@
       {"name": "citronová šťáva", "quantity": 0.25, "unit": "ks"},
       {"name": "česnek", "quantity": 0.25, "unit": "stroužku"},
       {"name": "extra panenský olivový olej", "quantity": 1, "unit": "lžička"},
-      {"name": "sůl", "quantity": null, "unit": "špetka"},
-      {"name": "kmín", "quantity": null, "unit": "špetka"},
-      {"name": "paprika", "quantity": null, "unit": "špetka (na ozdobení)"},
       {"name": "pita chléb", "quantity": 1, "unit": "plátek"}
     ],
     "instructions": [
@@ -59,8 +54,6 @@
       {"name": "česnek", "quantity": 1, "unit": "stroužek"},
       {"name": "limetková šťáva", "quantity": 1, "unit": "lžička"},
       {"name": "koriandr", "quantity": 1, "unit": "lžíce"},
-      {"name": "sůl", "quantity": null, "unit": "špetka"},
-      {"name": "pepř", "quantity": null, "unit": "špetka"},
       {"name": "nachos", "quantity": 1, "unit": "hrst"}
     ],
     "instructions": [
@@ -83,8 +76,6 @@
       {"name": "kyselá okurka", "quantity": 1, "unit": "ks"},
       {"name": "červená cibule", "quantity": 0.25, "unit": "ks"},
       {"name": "hořčice", "quantity": 1, "unit": "lžička"},
-      {"name": "sůl", "quantity": null, "unit": "špetka"},
-      {"name": "pepř", "quantity": null, "unit": "špetka"},
       {"name": "chléb", "quantity": 2, "unit": "plátky"}
     ],
     "instructions": [

@@ -1,11 +1,11 @@
 .quick-links {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-items: center;
-    grid-template-columns: repeat(8, 1fr); /* vsechny položky na řádku */
-    gap: 10px; /* Zvýšení mezery mezi položkami */
+    gap: 30px; /* Zvýšení mezery mezi položkami */
     margin: 20px auto; /* Center the component */
-    padding: 10px 0;
+    padding: 20px 0;
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,16 +39,4 @@
 }
 .quick-link-text.cart-link:hover {
     color: #388e3c; /* Darker green on hover */
-}
-
-@media (max-width: 768px) {
-    .quick-links {
-        grid-template-columns: repeat(2, 1fr); /* 2 položky na řádku na menších obrazovkách */
-    }
-}
-
-@media (max-width: 480px) {
-    .quick-links {
-        grid-template-columns: 1fr; /* 1 položka na řádku na velmi malých obrazovkách */
-    }
 }

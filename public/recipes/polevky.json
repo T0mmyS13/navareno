@@ -9,8 +9,6 @@
       {"name": "česnek", "quantity": 4, "unit": "stroužek"},
       {"name": "voda", "quantity": 1, "unit": "l"},
       {"name": "majoránka", "quantity": 1, "unit": "lžička"},
-      {"name": "sůl", "quantity": null, "unit": "dle chuti"},
-      {"name": "pepř", "quantity": null, "unit": "dle chuti"},
       {"name": "máslo", "quantity": 1, "unit": "lžíce"},
       {"name": "chleba na krutony", "quantity": 2, "unit": "plátek"}
     ],
@@ -37,9 +35,8 @@
       {"name": "olivový olej", "quantity": 1, "unit": "lžíce"},
       {"name": "vývar", "quantity": 500, "unit": "ml"},
       {"name": "smetana", "quantity": 100, "unit": "ml"},
-      {"name": "bazalka", "quantity": 1, "unit": "hrst"},
-      {"name": "sůl", "quantity": null, "unit": "dle chuti"},
-      {"name": "pepř", "quantity": null, "unit": "dle chuti"}
+      {"name": "bazalka", "quantity": 1, "unit": "hrst"}
+
     ],
     "instructions": [
       "Na oleji osmažte nadrobno nakrájenou cibuli a česnek.",
@@ -64,9 +61,7 @@
       {"name": "paprika sladká", "quantity": 1, "unit": "lžička"},
       {"name": "brambory", "quantity": 2, "unit": "ks"},
       {"name": "vývar", "quantity": 750, "unit": "ml"},
-      {"name": "olej", "quantity": 1, "unit": "lžíce"},
-      {"name": "sůl", "quantity": null, "unit": "dle chuti"},
-      {"name": "pepř", "quantity": null, "unit": "dle chuti"}
+      {"name": "olej", "quantity": 1, "unit": "lžíce"}
     ],
     "instructions": [
       "Na oleji osmahněte nakrájenou cibuli, přidejte maso a osmažte.",
@@ -89,8 +84,6 @@
       {"name": "vývar", "quantity": 500, "unit": "ml"},
       {"name": "smetana", "quantity": 100, "unit": "ml"},
       {"name": "máslo", "quantity": 1, "unit": "lžíce"},
-      {"name": "sůl", "quantity": null, "unit": "dle chuti"},
-      {"name": "pepř", "quantity": null, "unit": "dle chuti"},
       {"name": "čerstvá máta", "quantity": 3, "unit": "lístky"}
     ],
     "instructions": [
@@ -115,9 +108,7 @@
       {"name": "zázvor", "quantity": 1, "unit": "cm"},
       {"name": "vývar", "quantity": 750, "unit": "ml"},
       {"name": "smetana", "quantity": 100, "unit": "ml"},
-      {"name": "olej", "quantity": 1, "unit": "lžíce"},
-      {"name": "sůl", "quantity": null, "unit": "dle chuti"},
-      {"name": "pepř", "quantity": null, "unit": "dle chuti"}
+      {"name": "olej", "quantity": 1, "unit": "lžíce"}
     ],
     "instructions": [
       "Na oleji osmažte cibuli, česnek a zázvor.",

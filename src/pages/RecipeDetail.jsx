@@ -1,56 +1,51 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/RecipeDetail.css";
-import FoodItem from "../atoms/FoodItem.jsx"; // Komponenta pro zobrazení základních údajů o receptu
-import { getDeclinedUnit } from "../utils/units.js"; // Funkce pro správné skloňování jednotek
+import FoodItem from "../atoms/FoodItem.jsx";
+import { getDeclinedUnit } from "../utils/units.js";
+import { DataGrid } from "@mui/x-data-grid";
+import { useToast } from "../utils/ToastNotify.jsx";
+import Checkbox from '@mui/material/Checkbox'; // Importujeme MUI Checkbox
 
 const RecipeDetail = () => {
-    // Načteme parametry z URL (kategorie a název receptu)
     const { category, recipeName } = useParams();
+    const [portionCount, setPortionCount] = useState(2);
+    const [recipe, setRecipe] = useState(null);
+    const [adjustedIngredients, setAdjustedIngredients] = useState([]);
+    const [checkedRows, setCheckedRows] = useState([]); // Stav pro sledování zaškrtnutých řádků
+    const { showToast } = useToast();
 
-    // Stavy pro správu dat a UI
-    const [portionCount, setPortionCount] = useState(2); // Výchozí počet porcí je 2
-    const [recipe, setRecipe] = useState(null); // Data receptu
-    const [adjustedIngredients, setAdjustedIngredients] = useState([]); // Upravené ingredience podle počtu porcí
-    const [showToast, setShowToast] = useState(false); // Toast notifikace
-    const [toastMessage, setToastMessage] = useState(""); // Zpráva toastu
-    const [toastType, setToastType] = useState("success"); // Typ toastu (úspěch/chyba)
-
-    // Funkce pro načítání dat receptu podle kategorie a názvu
     const fetchRecipe = () => {
         const storedRecipes = JSON.parse(localStorage.getItem(category)) || [];
         const foundRecipe = storedRecipes.find(
-                    (r) => r.title.toLowerCase() === recipeName.toLowerCase()
-                );
-                if (foundRecipe) {
-                    setRecipe(foundRecipe);
-                    setAdjustedIngredients(foundRecipe.ingredients); // Nastavíme i základní ingredience
+            (r) => r.title.toLowerCase() === recipeName.toLowerCase()
+        );
+        if (foundRecipe) {
+            setRecipe(foundRecipe);
+            setAdjustedIngredients(foundRecipe.ingredients);
         } else {
             console.error("Recept nebyl nalezen.");
-                }
+        }
     };
 
-    // Pokud recept není načtený, spustíme jeho načítání
     if (!recipe) {
         fetchRecipe();
-        return <p>Načítám recept...</p>; // Jednoduché loading hlášení
+        return <p>Načítám recept...</p>;
     }
 
-    // Funkce pro přepočet ingrediencí podle změny počtu porcí
     const adjustIngredientsForPortions = (ingredients, currentPortions, targetPortions) => {
         return ingredients.map(ingredient => {
             if (ingredient.quantity !== null && ingredient.quantity !== undefined) {
                 return {
                     ...ingredient,
                     quantity: ingredient.quantity * (targetPortions / currentPortions),
-                    unit: normalizeUnit(ingredient.unit), // Normalizujeme jednotku
+                    unit: normalizeUnit(ingredient.unit),
                 };
             }
-            return ingredient; // Pokud quantity chybí, vrátíme beze změny
+            return ingredient;
         });
     };
 
-    // Pomocná funkce pro normalizaci jednotek (aby se správně skloňovaly a ukládaly)
     const normalizeUnit = (unit) => {
         switch (unit) {
             case "lžička":
@@ -63,11 +58,10 @@ const RecipeDetail = () => {
             case "kulička":
                 return unit;
             default:
-                return unit; // Pokud není v seznamu, vrátíme jak je
+                return unit;
         }
     };
 
-    // Funkce na změnu počtu porcí (při změně inputu)
     const handlePortionChange = (e) => {
         const newPortionCount = e.target.value;
         setPortionCount(newPortionCount);
@@ -75,33 +69,34 @@ const RecipeDetail = () => {
         if (recipe && recipe.ingredients) {
             const adjusted = adjustIngredientsForPortions(
                 recipe.ingredients,
-                2, // Výchozí počet porcí je 2 (předpoklad)
+                2,
                 newPortionCount
             );
             setAdjustedIngredients(adjusted);
         }
     };
 
-    // Funkce pro uložení ingrediencí do localStorage (nákupní seznam)
     const saveToCart = () => {
         const storedIngredients = JSON.parse(localStorage.getItem("cart")) || [];
-        const updatedIngredients = [...storedIngredients, ...adjustedIngredients];
+        const ingredientsToAdd = adjustedIngredients.filter((ingredient, index) => !checkedRows.includes(index));
+        const updatedIngredients = [...storedIngredients, ...ingredientsToAdd];
         localStorage.setItem("cart", JSON.stringify(updatedIngredients));
 
-        // Nastavíme toast
-        setToastMessage("Ingredience byly přidány do nákupního seznamu.");
-        setToastType("success");
-        setShowToast(true);
+        showToast("Ingredience byly přidány do nákupního seznamu.", "success");
+    };
 
-        // Toast zmizí po 3 sekundách
-        setTimeout(() => {
-            setShowToast(false);
-        }, 3000);
+    const handleCheckboxChange = (index) => {
+        setCheckedRows((prev) => {
+            if (prev.includes(index)) {
+                return prev.filter((id) => id !== index); // Odstraní zaškrtnutí
+            } else {
+                return [...prev, index]; // Přidá zaškrtnutí
+            }
+        });
     };
 
     return (
         <div className="recipe-detail">
-            {/* Základní informace o receptu */}
             <FoodItem
                 title={recipe.title}
                 link={`/${category}/${recipeName}`}
@@ -113,38 +108,61 @@ const RecipeDetail = () => {
             />
 
             <div className="recipe-content">
-                {/* Ingredience sekce */}
                 <h2>Ingredience</h2>
 
-                {/* Input pro změnu počtu porcí */}
-                <label htmlFor="portion-count">Počet porcí:</label>
-                <input
-                    id="portion-count"
-                    type="number"
-                    value={portionCount}
-                    onChange={handlePortionChange}
-                    min="1"
-                />
+                <div className="portion-input">
+                    <label htmlFor="portion-count" className="portion-label">Počet porcí:</label>
+                    <input
+                        id="portion-count"
+                        type="number"
+                        className="portion-input-field"
+                        value={portionCount}
+                        onChange={handlePortionChange}
+                        min="1"
+                    />
+                </div>
 
-                {/* Výpis ingrediencí */}
                 {adjustedIngredients && adjustedIngredients.length > 0 ? (
-                    <ul>
-                        {adjustedIngredients.map((ingredient, index) => (
-                            <li key={index}>
-                                {ingredient.name} {ingredient.quantity} {getDeclinedUnit(ingredient.unit, ingredient.quantity)}
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="ingredients-container">
+                        <DataGrid
+                            rows={adjustedIngredients.map((ingredient, index) => ({
+                                id: index,
+                                name: ingredient.name,
+                                quantity: ingredient.quantity,
+                                unit: getDeclinedUnit(ingredient.unit, ingredient.quantity),
+                                isChecked: checkedRows.includes(index), // Stav zaškrtnutí
+                            }))}
+                            columns={[
+                                {
+                                    field: 'checkbox',
+                                    headerName: '',
+                                    renderCell: (params) => (
+                                        <Checkbox
+                                            checked={params.row.isChecked}
+                                            onChange={() => handleCheckboxChange(params.row.id)}
+                                            color="primary"
+                                        />
+                                    ),
+                                    width: 50,
+                                },
+                                { field: 'name', headerName: 'Ingredience', flex: 1 },
+                                { field: 'quantity', headerName: 'Množství', flex: 1, type: 'number' },
+                                { field: 'unit', headerName: 'Jednotka', flex: 1 },
+                            ]}
+                            pageSize={5}
+                            rowHeight={40}
+                            getRowClassName={(params) => params.row.isChecked ? 'checked-row' : ''} // Podmíněná třída pro zaškrtnuté řádky
+                            hideFooter
+                        />
+                    </div>
                 ) : (
                     <p>Ingredience nejsou k dispozici.</p>
                 )}
 
-                {/* Tlačítko pro uložení ingrediencí */}
                 <button className="cart-button" onClick={saveToCart}>
                     Uložit do nákupního seznamu
                 </button>
 
-                {/* Postup přípravy */}
                 <h2>Postup</h2>
                 {recipe.instructions && recipe.instructions.length > 0 ? (
                     <ol>
@@ -156,15 +174,9 @@ const RecipeDetail = () => {
                     <p>Postup není k dispozici.</p>
                 )}
 
-                {/* Tlačítko Zpět */}
                 <a href={`/${category}`} className="back-button">
                     Zpět
                 </a>
-
-                {/* Toast notifikace */}
-                <div className={`toast ${showToast ? 'show' : ''} ${toastType}`}>
-                    {toastMessage}
-                </div>
             </div>
         </div>
     );

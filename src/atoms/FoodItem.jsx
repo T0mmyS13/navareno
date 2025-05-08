@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/FoodItem.css";
+import {Rating} from "@mui/material";
 
 // Seznam úrovní obtížnosti
 const difficulties = ["Snadné", "Střední", "Obtížné"];
@@ -49,28 +50,22 @@ const FoodItem = ({ title, description, image, time, difficulty, rating, ratings
 
             {/* Informace o jídle */}
             <div className="food-info">
-                <span>⏱ {time} min</span>
-                <span>🔧 Obtížnost: {difficultyText}</span>
-                <span>⭐ {averageRating.toFixed(1)}/5 ({votes} hodnocení)</span>
+                <span> <img src="/icons/clock.svg" alt="Clock" style={{ width: "16px", marginRight: "5px" }} /> {time} min</span>
+                <span>{difficultyText} <img src={`/icons/${difficulty === 1 ? "easy" : difficulty === 2 ? "medium" : "hard"}.png`} alt={difficultyText} style={{ width: "24px", marginLeft: "10px" }} /></span>
+                <span><img src="/icons/star.png" alt="Star" style={{ width: "16px", marginRight: "10px" }} /> {averageRating.toFixed(1)}/5 ({votes} hodnocení)</span>
             </div>
 
             {/* Sekce pro hodnocení */}
             <div className="rating-section">
                 <label>Ohodnoťte: </label>
-                <select
-                    onChange={handleRatingChange}
-                    defaultValue="0"
+                <Rating
+                    value={hasRated ? averageRating : null}
+                    onChange={(e, newValue) => handleRatingChange({ target: { value: newValue } })}
                     disabled={hasRated} // Pokud uživatel již hodnotil, pole je zakázáno
-                    className="rating-select"
-                >
-                    <option value="0" disabled>Vyberte...</option>
-                    {[1, 2, 3, 4, 5].map(num => (
-                        <option key={num} value={num}>{num} ⭐</option> // Možnosti hodnocení od 1 do 5
-                    ))}
-                </select>
-
+                />
                 {/* Zobrazí zprávu, pokud uživatel již hodnotil */}
                 {hasRated && <p className="thank-you-message">Děkujeme za hodnocení!</p>}
+
             </div>
         </div>
     );

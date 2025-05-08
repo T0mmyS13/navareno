@@ -7,12 +7,14 @@ import HeaderLink from "./atoms/HeaderLink.jsx";
 import AddRecipePage from "./pages/NewRecipe.jsx";
 import Cart from "./pages/Cart.jsx";
 import loadCategoriesToLocalStorage from "./utils/loadCategoriesToLocalStorage.js";
+import {ToastProvider} from "./utils/ToastNotify.jsx";
 
 loadCategoriesToLocalStorage();
 
 const App = () => {
     return (
         <Router>
+            <ToastProvider>
             <HeaderLink />
             <Routes>
                 <Route path="/" element={<MainPage />} />
@@ -21,6 +23,7 @@ const App = () => {
                 <Route path="/new-recipe" element={<AddRecipePage />} />
                 <Route path="/cart" element={<Cart/>} />
             </Routes>
+            </ToastProvider>
         </Router>
     );
 };

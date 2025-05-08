@@ -1,30 +1,20 @@
+const unitDeclensions = {
+    "lžíce": ["lžíce", "lžíce", "lžic"],
+    "lžička": ["lžička", "lžičky", "lžiček"],
+    "hrst": ["hrst", "hrsti", "hrstí"],
+    "plátek": ["plátek", "plátky", "plátků"],
+    "stroužek": ["stroužek", "stroužky", "stroužků"],
+    "konzerva": ["konzerva", "konzervy", "konzerv"],
+    "lístek": ["lístek", "lístky", "lístků"],
+    "kulička": ["kulička", "kuličky", "kuliček"],
+    "hrnek": ["hrnek", "hrnky", "hrnků"],
+};
+
 export const getDeclinedUnit = (unit, quantity) => {
-    if (quantity === 1) {
-        return unit; // Jednotné číslo
-    }
-    if (unit === "lžíce") {
-        return quantity < 5 ? "lžíce" : "lžic";
-    }
-    if (unit === "lžička") {
-        return quantity < 5 ? "lžičky" : "lžiček";
-    }
-    if (unit === "hrst") {
-        return quantity < 5 ? "hrsti" : "hrstí";
-    }
-    if (unit === "plátek") {
-        return quantity < 5 ? "plátky" : "plátků";
-    }
-    if (unit === "stroužek") {
-        return quantity < 5 ? "stroužky" : "stroužků";
-    }
-    if (unit === "konzerva") {
-        return quantity < 5 ? "konzervy" : "konzerv";
-    }
-    if (unit === "lístek") {
-        return quantity < 5 ? "lístky" : "lístků";
-    }
-    if (unit === "kulička") {
-        return quantity < 5 ? "kuličky" : "kuliček";
-    }
-    return unit; // Pokud není žádná specifická skloňovací logika, vrátíme původní jednotku
+    const forms = unitDeclensions[unit];
+    if (!forms) return unit;
+
+    if (quantity === 1) return forms[0];         // 1 kus
+    if (quantity < 5) return forms[1];           // 2–4 kusy
+    return forms[2];                             // 5 a více kusů
 };

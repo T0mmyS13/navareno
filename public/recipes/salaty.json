@@ -10,10 +10,7 @@
       { "name": "červená cibule", "quantity": 0.5, "unit": "ks" },
       { "name": "černé olivy", "quantity": 10, "unit": "ks" },
       { "name": "sýr feta", "quantity": 100, "unit": "g" },
-      { "name": "olivový olej", "quantity": 2, "unit": "lžíce" },
-      { "name": "oregano", "quantity": null, "unit": "špetka" },
-      { "name": "sůl", "quantity": null, "unit": "špetka" },
-      { "name": "pepř", "quantity": null, "unit": "špetka" }
+      { "name": "olivový olej", "quantity": 2, "unit": "lžíce" }
     ],
     "instructions": [
       "Rajčata a okurku nakrájejte na kousky.",
@@ -37,9 +34,7 @@
       { "name": "okurka", "quantity": 0.5, "unit": "ks" },
       { "name": "petržel", "quantity": 2, "unit": "nasekané" },
       { "name": "olivový olej", "quantity": 1, "unit": "lžíce" },
-      { "name": "citronová šťáva", "quantity": 1, "unit": "lžíce" },
-      { "name": "sůl", "quantity": null, "unit": "špetka" },
-      { "name": "pepř", "quantity": null, "unit": "špetka" }
+      { "name": "citronová šťáva", "quantity": 1, "unit": "lžíce" }
     ],
     "instructions": [
       "Cizrnu slijte a propláchněte.",
@@ -63,9 +58,7 @@
       { "name": "červená paprika", "quantity": 1, "unit": "ks" },
       { "name": "okurka", "quantity": 0.5, "unit": "ks" },
       { "name": "bílý jogurt", "quantity": 3, "unit": "lžíce" },
-      { "name": "citronová šťáva", "quantity": 1, "unit": "lžička" },
-      { "name": "sůl", "quantity": null, "unit": "špetka" },
-      { "name": "pepř", "quantity": null, "unit": "špetka" }
+      { "name": "citronová šťáva", "quantity": 1, "unit": "lžička" }
     ],
     "instructions": [
       "Těstoviny uvařte dle návodu a nechte vychladnout.",
@@ -109,9 +102,7 @@
       { "name": "vejce", "quantity": 1, "unit": "ks" },
       { "name": "rajče", "quantity": 1, "unit": "ks" },
       { "name": "okurka", "quantity": 0.5, "unit": "ks" },
-      { "name": "olivový olej", "quantity": 1, "unit": "lžíce" },
-      { "name": "sůl", "quantity": null, "unit": "špetka" },
-      { "name": "pepř", "quantity": null, "unit": "špetka" }
+      { "name": "olivový olej", "quantity": 1, "unit": "lžíce" }
     ],
     "instructions": [
       "Vejce uvařte natvrdo, oloupejte a nakrájejte.",

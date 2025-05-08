@@ -78,9 +78,8 @@
     "ingredients": [
       { "name": "hladká mouka", "quantity": 200, "unit": "g" },
       { "name": "mléko", "quantity": 400, "unit": "ml" },
-      { "name": "vejce", "quantity": 2, "unit": "ks" },
-      { "name": "sůl", "quantity": 1, "unit": "špetka" },
-      { "name": "olej", "quantity": null, "unit": "na smažení" }
+      { "name": "vejce", "quantity": 2, "unit": "ks" }
+
     ],
     "instructions": [
       "Smíchejte všechny ingredience do hladkého těsta.",

@@ -1,0 +1,33 @@
+/* Styl pro toast notifikace */
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Vycentrování toastu */
+    background-color: rgba(0, 0, 0, 0.7); /* Polotransparentní pozadí */
+    color: white; /* Bílé písmo */
+    padding: 10px 20px; /* Vnitřní odsazení */
+    border-radius: 5px; /* Zaoblení rohů */
+    z-index: 999; /* Zajištění, že toast bude nad jinými prvky */
+    opacity: 0; /* Začíná skrytý */
+    transition: opacity 0.3s ease-in-out; /* Plynulé zobrazení a skrytí */
+    max-width: 90%; /* Maximální šířka toastu pro mobilní zařízení */
+    box-sizing: border-box; /* Zahrnuje padding do šířky */
+}
+
+.toast.show {
+    opacity: 1; /* Viditelný toast */
+}
+
+/* Různé barvy pro různé typy toastů */
+.toast.success {
+    background-color: #4caf50; /* Zelená pro úspěch */
+}
+
+.toast.error {
+    background-color: #f44336; /* Červená pro chyby */
+}
+
+.toast.info {
+    background-color: #2196f3; /* Modrá pro informace */
+}

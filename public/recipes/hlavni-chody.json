@@ -17,7 +17,6 @@
       { "name": "bobkový list", "quantity": 2, "unit": "ks" },
       { "name": "nové koření", "quantity": 3, "unit": "kulička" },
       { "name": "pepř", "quantity": 3, "unit": "kulička" },
-      { "name": "sůl", "quantity": null, "unit": "dle chuti" },
       { "name": "houskový knedlík", "quantity": 1, "unit": "porce" }
     ],
     "instructions": [
@@ -40,10 +39,7 @@
       { "name": "kuřecí prsa", "quantity": 2, "unit": "ks" },
       { "name": "mouka", "quantity": 3, "unit": "lžíce" },
       { "name": "vejce", "quantity": 2, "unit": "ks" },
-      { "name": "strouhanka", "quantity": 5, "unit": "lžíce" },
-      { "name": "olej", "quantity": null, "unit": "na smažení" },
-      { "name": "sůl", "quantity": null, "unit": "dle chuti" },
-      { "name": "pepř", "quantity": null, "unit": "dle chuti" }
+      { "name": "strouhanka", "quantity": 5, "unit": "lžíce" }
     ],
     "instructions": [
       "Kuřecí prsa naklepejte, osolte a opepřete.",
@@ -64,9 +60,8 @@
       { "name": "špagety", "quantity": 200, "unit": "g" },
       { "name": "vejce", "quantity": 2, "unit": "ks" },
       { "name": "parmazán", "quantity": 50, "unit": "g" },
-      { "name": "slanina", "quantity": 100, "unit": "g" },
-      { "name": "pepř", "quantity": null, "unit": "dle chuti" },
-      { "name": "sůl", "quantity": null, "unit": "dle chuti" }
+      { "name": "slanina", "quantity": 100, "unit": "g" }
+
     ],
     "instructions": [
       "Uvařte špagety al dente.",
@@ -88,7 +83,6 @@
       { "name": "kachna", "quantity": 1.5, "unit": "kg" },
       { "name": "červené zelí", "quantity": 300, "unit": "g" },
       { "name": "cibule", "quantity": 1, "unit": "ks" },
-      { "name": "sůl", "quantity": null, "unit": "dle chuti" },
       { "name": "kmín", "quantity": 1, "unit": "lžička" },
       { "name": "jablko", "quantity": 1, "unit": "ks" },
       { "name": "bramborový knedlík", "quantity": 1, "unit": "porce" }
@@ -113,8 +107,6 @@
       { "name": "smetana", "quantity": 200, "unit": "ml" },
       { "name": "česnek", "quantity": 1, "unit": "stroužek" },
       { "name": "sýr", "quantity": 100, "unit": "g" },
-      { "name": "sůl", "quantity": null, "unit": "dle chuti" },
-      { "name": "pepř", "quantity": null, "unit": "dle chuti" },
       { "name": "máslo", "quantity": 1, "unit": "lžička" }
     ],
     "instructions": [
