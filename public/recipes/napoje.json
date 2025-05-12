@@ -8,7 +8,7 @@
       { "name": "citron", "quantity": 2, "unit": "ks" },
       { "name": "máta", "quantity": 5, "unit": "lístků" },
       { "name": "cukr", "quantity": 3, "unit": "lžíce" },
-      { "name": "voda", "quantity": 1, "unit": "litr" },
+      { "name": "voda", "quantity": 1000, "unit": "ml" },
       { "name": "led", "quantity": 1, "unit": "hrst" }
     ],
     "instructions": [
