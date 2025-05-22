@@ -3,7 +3,6 @@
 
 ### 🧪 `README.md` pro `pre-testing` větev (testovací verze)
 
-> Umísti do: `pre-testing` branch
 
 ```markdown
 # 🧪 Navařeno – Testovací verze aplikace
