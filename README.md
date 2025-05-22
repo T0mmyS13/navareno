@@ -1,13 +1,6 @@
-# Receptová aplikace
-Projekt vznikl jako semestralní práce na předmět UUR na FAV ZČU.
+## 🧪 Testovací verze aplikace
 
-Tato aplikace je receptová platforma postavená na Reactu. Uživatelé mohou prohlížet recepty, upravovat počet porcí a přidávat ingredience do nákupního seznamu. Recepty jsou kategorizovány do různých typů (např. předkrmy, polévky, hlavní jídla, dezerty atd.).
+Tato větev (`pre-testing`) obsahuje původní verzi před testováním a úpravami.
 
-
-## Funkce aplikace
-
-- **Prohlížení receptů**: Uživatelé mohou procházet recepty podle kategorií.
-- **Přepočet ingrediencí podle počtu porcí**: Uživatelé mohou upravit počet porcí a ingredience se automaticky přepočítají.
-- **Nákupní seznam**: Ingredience z receptů mohou být přidány do nákupního seznamu, který je uložen v `localStorage`.
-- **Toast notifikace**: Po přidání ingrediencí do nákupního seznamu se zobrazí toast notifikace, která informuje uživatele o úspěšném přidání.
-
+➡ Finální verze je dostupná zde:  
+👉 [main branch](https://github.com/T0mmyS13/hokus/tree/main)
