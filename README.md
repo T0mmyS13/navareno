@@ -3,8 +3,6 @@
 
 ### 🧪 `README.md` pro `pre-testing` větev (testovací verze)
 
-
-```markdown
 # 🧪 Navařeno – Testovací verze aplikace
 
 **Navařeno** je webová aplikace pro správu receptů s přehledným rozdělením do kategorií, možností úpravy počtu porcí a automatickým přepočtem množství ingrediencí.
