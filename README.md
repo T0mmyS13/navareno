@@ -16,6 +16,6 @@ Tato větev (`main`) obsahuje **finální podobu aplikace po testování a úpra
 
 ### 🧑‍💻 Přes Git:
 ```bash
-git clone https://github.com/T0mmyS13/hokus.git
+git clone https://github.com/T0mmyS13/navareno.git
 cd hokus
 git checkout main
