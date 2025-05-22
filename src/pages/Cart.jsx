@@ -8,6 +8,8 @@ const removeDiacritics = (text) => {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
+
+
 const ShoppingList = () => {
     const [MergedIngredients,setMergedIngredients] = useState([]);
     const [showQRCode, setShowQRCode] = useState(false);
@@ -73,6 +75,29 @@ const ShoppingList = () => {
         setShowQRCode(true);
     };
 
+    // Přidáme novou funkci pro odstranění jedné položky
+    const handleRemoveItem = (index) => {
+        const currentItems = getIngredientsFromLocalStorage();
+        const itemToRemove = merged[index];
+
+        // Filtrujeme položky v localStorage
+        const updatedItems = currentItems.filter(item =>
+            !(item.name === itemToRemove.name && item.unit === itemToRemove.unit)
+        );
+
+        // Aktualizujeme localStorage
+        localStorage.setItem("cart", JSON.stringify(updatedItems));
+
+        // Aktualizujeme stav
+        setMergedIngredients(mergeIngredients(updatedItems));
+
+        // Pokud je seznam prázdný, skryjeme QR kód
+        if (updatedItems.length === 0) {
+            setShowQRCode(false);
+        }
+    };
+
+
     return (
         <div className="shopping-list-container">
             <h1>Nákupní seznam</h1>
@@ -86,10 +111,13 @@ const ShoppingList = () => {
                             <span className="ingredient-name">{item.name}</span>
                             <span className="ingredient-quantity">{item.quantity}</span>
                             <span className="ingredient-unit">{getDeclinedUnit(item.unit, item.quantity)}</span>
+                            <span className="remove-item-button" onClick={() => handleRemoveItem(index)}>✕</span>
+
                         </li>
                     ))}
                 </ul>
             )}
+
 
             {merged.length > 0 && (
                 <div className="buttons-container">

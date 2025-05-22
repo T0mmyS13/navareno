@@ -81,7 +81,7 @@
 .ingredient-row,
 .instruction-row {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 1rem;
     gap: 0.5rem;
 }

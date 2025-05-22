@@ -12,8 +12,13 @@ const RecipeDetail = () => {
     const [portionCount, setPortionCount] = useState(2);
     const [recipe, setRecipe] = useState(null);
     const [adjustedIngredients, setAdjustedIngredients] = useState([]);
-    const [checkedRows, setCheckedRows] = useState([]); // Stav pro sledování zaškrtnutých řádků
+    const storageKey = `checkedRows_${category}_${recipeName}`;
+    const [checkedRows, setCheckedRows] = useState(() => {
+        const saved = localStorage.getItem(storageKey);
+        return saved ? JSON.parse(saved) : [];
+    });
     const { showToast } = useToast();
+
 
     const fetchRecipe = () => {
         const storedRecipes = JSON.parse(localStorage.getItem(category)) || [];
@@ -89,14 +94,14 @@ const RecipeDetail = () => {
     };
 
     const handleCheckboxChange = (index) => {
-        setCheckedRows((prev) => {
-            if (prev.includes(index)) {
-                return prev.filter((id) => id !== index); // Odstraní zaškrtnutí
-            } else {
-                return [...prev, index]; // Přidá zaškrtnutí
-            }
-        });
+        const newCheckedRows = checkedRows.includes(index)
+            ? checkedRows.filter(id => id !== index)
+            : [...checkedRows, index];
+
+        setCheckedRows(newCheckedRows);
+        localStorage.setItem(storageKey, JSON.stringify(newCheckedRows));
     };
+
 
     return (
         <div className="recipe-detail">
@@ -138,7 +143,7 @@ const RecipeDetail = () => {
                             columns={[
                                 {
                                     field: 'checkbox',
-                                    headerName: '',
+                                    headerName: 'Mám',
                                     renderCell: (params) => (
                                         <Checkbox
                                             checked={params.row.isChecked}
@@ -146,7 +151,7 @@ const RecipeDetail = () => {
                                             color="primary"
                                         />
                                     ),
-                                    width: 50,
+                                    width: 85,
                                 },
                                 { field: 'name', headerName: 'Ingredience', flex: 1 },
                                 { field: 'quantity', headerName: 'Množství', flex: 1, type: 'number' },
