@@ -21,5 +21,5 @@ Tato větev (`pre-testing`) obsahuje **původní verzi aplikace před finálním
 ### 🧑‍💻 Přes Git:
 ```bash
 git clone https://github.com/T0mmyS13/navareno.git
-cd hokus
+cd navareno
 git checkout pre-testing
