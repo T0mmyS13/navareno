@@ -116,6 +116,9 @@
     .qr-code-container {
         display: none;
     }
+    .remove-item-button {
+        display: none;
+    }
 }
 
 .remove-item-button {
