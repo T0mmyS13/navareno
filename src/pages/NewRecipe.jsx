@@ -83,7 +83,7 @@ const AddRecipePage = () => {
         localStorage.setItem(normalizedCategory, JSON.stringify(updatedRecipes));
         showToast("Recept přidán", "success");
 
-        // Reset form fields
+        // Resetuj formulář
         setTitle("");
         setDescription("");
         setIngredients([{ name: "", quantity: "", unit: "" }]);

@@ -20,6 +20,7 @@ const RecipeDetail = () => {
     const { showToast } = useToast();
 
 
+    // Načte recept z localStorage podle kategorie a názvu receptu
     const fetchRecipe = () => {
         const storedRecipes = JSON.parse(localStorage.getItem(category)) || [];
         const foundRecipe = storedRecipes.find(
@@ -38,6 +39,7 @@ const RecipeDetail = () => {
         return <p>Načítám recept...</p>;
     }
 
+    // Přepočítá množství ingrediencí podle zvoleného počtu porcí
     const adjustIngredientsForPortions = (ingredients, currentPortions, targetPortions) => {
         return ingredients.map(ingredient => {
             if (ingredient.quantity !== null && ingredient.quantity !== undefined) {
@@ -51,6 +53,7 @@ const RecipeDetail = () => {
         });
     };
 
+    // Normalizuje jednotku pro zobrazení
     const normalizeUnit = (unit) => {
         switch (unit) {
             case "lžička":
@@ -67,6 +70,7 @@ const RecipeDetail = () => {
         }
     };
 
+    // Zpracuje změnu počtu porcí a aktualizuje množství ingrediencí
     const handlePortionChange = (e) => {
         const newPortionCount = e.target.value;
         setPortionCount(newPortionCount);
@@ -84,6 +88,7 @@ const RecipeDetail = () => {
         }
     };
 
+    // Uloží nezaškrtnuté ingredience do nákupního košíku v localStorage
     const saveToCart = () => {
         const storedIngredients = JSON.parse(localStorage.getItem("cart")) || [];
         const ingredientsToAdd = adjustedIngredients.filter((ingredient, index) => !checkedRows.includes(index));
@@ -93,6 +98,7 @@ const RecipeDetail = () => {
         showToast("Ingredience byly přidány do nákupního seznamu.", "success");
     };
 
+    // Zpracuje stav checkboxu pro každou ingredienci a uloží ho do localStorage
     const handleCheckboxChange = (index) => {
         const newCheckedRows = checkedRows.includes(index)
             ? checkedRows.filter(id => id !== index)
