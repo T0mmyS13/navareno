@@ -102,7 +102,7 @@ const AddRecipePage = () => {
         localStorage.setItem(normalizedCategory, JSON.stringify(updatedRecipes));
         showToast("Recept přidán", "success");
 
-        // Reset form fields
+        // Resetuj formulář
         setTitle("");
         setDescription("");
         setIngredients([{ name: "", quantity: "", unit: "" }]);
@@ -129,21 +129,21 @@ const AddRecipePage = () => {
                             />
                         </div>
                         <div className="category-field">
-                            <TextField
-                                select
-                                label="Kategorie"
-                                variant="outlined"
+                            <FormControl fullWidth required>
+                                <InputLabel id="category-label">Kategorie</InputLabel>
+                                <Select
+                                    labelId="category-label"
                                 value={category}
+                                    label="Kategorie"
                                 onChange={(e) => setCategory(e.target.value)}
-                                required
-                                fullWidth
                             >
                                 {["předkrmy", "polévky", "saláty", "hlavní chody", "dezerty", "nápoje"].map((option) => (
                                     <MenuItem key={option} value={option}>
                                         {option.charAt(0).toUpperCase() + option.slice(1)}
                                     </MenuItem>
                                 ))}
-                            </TextField>
+                                </Select>
+                            </FormControl>
                         </div>
                     </div>
 
@@ -194,7 +194,7 @@ const AddRecipePage = () => {
                     multiline
                     rows={2}
                     className="description"
-                    inputProps={{ maxLength: 250 }}
+                    inputProps={{ maxLength: 200 }}
                     required
                 />
 

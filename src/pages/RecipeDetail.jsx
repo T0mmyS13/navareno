@@ -44,11 +44,27 @@ const RecipeDetail = () => {
                 return {
                     ...ingredient,
                     quantity: ingredient.quantity * (targetPortions / currentPortions),
-                    unit: ingredient.unit
+                    unit: normalizeUnit(ingredient.unit),
                 };
             }
             return ingredient;
         });
+    };
+
+    const normalizeUnit = (unit) => {
+        switch (unit) {
+            case "lžička":
+            case "lžíce":
+            case "hrst":
+            case "plátek":
+            case "stroužek":
+            case "konzerva":
+            case "lístek":
+            case "kulička":
+                return unit;
+            default:
+                return unit;
+        }
     };
 
     const handlePortionChange = (e) => {
