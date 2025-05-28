@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
-import "../styles/toast.css"; // Import your CSS for the toast notification
+import "../styles/toast.css";
 
 const ToastContext = createContext();
 

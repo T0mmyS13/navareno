@@ -70,7 +70,7 @@ const CategoryPage = () => {
 
     return (
         <div className="category-page">
-            {/* Hero sekce */}
+            {/* Hlavni obrazek */}
             <div className="hero">
                 <img
                     src={`/images/${category}.jpg`}

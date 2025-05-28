@@ -27,7 +27,7 @@ const MainPage = () => {
             </div>
 
             {/* Úvodní nadpis sekce kategorií */}
-            <h2 className="section-title">Vyberte si z našich chutných kategorií</h2>
+            <h2 className="section-title">Vyberte si z našich kategorií</h2>
             <p className="section-subtitle">Od předkrmu až po dezert</p>
 
             {/* Mřížka s kategoriemi */}
