@@ -155,3 +155,13 @@ li {
 .ingredient-unit {
     margin-right: 8px;
 }
+
+button.dump {
+    background-color: #e53935;
+}
+
+button.dump:hover {
+    background-color: #ff0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
