@@ -13,8 +13,8 @@ import {
 } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
 import { useToast } from "../utils/ToastNotify.jsx";
-import ImageIcon from "@mui/icons-material/Image"; // Nezapomeň na tento import pro ikonu
-import "../styles/NewRecipe.css";  // Tady je odkaz na externí CSS
+import ImageIcon from "@mui/icons-material/Image";
+import "../styles/NewRecipe.css";
 
 const AddRecipePage = () => {
     const [title, setTitle] = useState("");
@@ -50,16 +50,42 @@ const AddRecipePage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (isNaN(time) || time <= 0 || ingredients.some(ing => isNaN(ing.quantity) || ing.quantity <= 0)) {
-            showToast("Čas a množství musí být platná čísla", "error");
+        if (!title.trim() || title.trim().length < 5) {
+            showToast("Název receptu musí mít alespoň 5 znaků", "error");
             return;
         }
+        if (!description.trim() || description.trim().length < 10) {
+            showToast("Popis musí mít alespoň 10 znaků", "error");
+            return;
+        }
+
+        if (ingredients.length === 0 || ingredients.every(ing => !ing.name.trim())) {
+            showToast("Musí být zadána alespoň jedna ingredience s názvem", "error");
+            return;
+        }
+        if (ingredients.some(ing => isNaN(ing.quantity) || ing.quantity <= 0 || !ing.unit)) {
+            showToast("Množství u všech ingrediencí musí být platné číslo větší než 0 a musí být vyplněna jednotka", "error");
+            return;
+        }
+
+        if (instructions.length === 0 || instructions.every(instr => !instr.trim())) {
+            showToast("Musí být zadán alespoň jeden krok postupu", "error");
+            return;
+        }
+
 
         const normalizedCategory = category
             .toLowerCase()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
-            .replace(/\s+/g, "-"); // Replace spaces with hyphens
+            .replace(/\s+/g, "-");
+
+        const storedRecipes = JSON.parse(localStorage.getItem(normalizedCategory)) || [];
+        const isDuplicate = storedRecipes.some(recipe => recipe.title.toLowerCase() === title.toLowerCase());
+        if (isDuplicate) {
+            showToast(`Recept pod názvem ${title} už existuje`, "error");
+            return;
+        }
 
         const newRecipe = {
             title,
@@ -71,13 +97,6 @@ const AddRecipePage = () => {
             image,
             rating: null,
         };
-
-        const storedRecipes = JSON.parse(localStorage.getItem(normalizedCategory)) || [];
-        const isDuplicate = storedRecipes.some(recipe => recipe.title.toLowerCase() === title.toLowerCase());
-        if (isDuplicate) {
-            showToast(`Recept pod názvem ${title} už existuje`, "error");
-            return;
-        }
 
         const updatedRecipes = [...storedRecipes, newRecipe];
         localStorage.setItem(normalizedCategory, JSON.stringify(updatedRecipes));

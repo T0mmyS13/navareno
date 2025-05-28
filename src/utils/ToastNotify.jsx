@@ -8,7 +8,7 @@ export const ToastProvider = ({ children }) => {
     const [type, setType] = useState("success");
     const [visible, setVisible] = useState(false);
 
-    const showToast = (msg, toastType = "success") => {
+    const showToast = (msg, toastType) => {
         setMessage(msg);
         setType(toastType);
         setVisible(true);

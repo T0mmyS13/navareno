@@ -122,8 +122,8 @@ const ShoppingList = () => {
             {merged.length > 0 && (
                 <div className="buttons-container">
                     <button onClick={handlePrint}>Tisknout</button>
-                    <button onClick={handleClearCart}>Vysypat košík</button>
                     <button onClick={handleGenerateQR}>Vygeneruj QR kód</button>
+                    <button className="dump" onClick={handleClearCart}>Vysypat košík</button>
                 </div>
             )}
 
