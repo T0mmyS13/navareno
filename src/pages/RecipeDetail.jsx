@@ -40,35 +40,20 @@ const RecipeDetail = () => {
 
     const adjustIngredientsForPortions = (ingredients, currentPortions, targetPortions) => {
         return ingredients.map(ingredient => {
-            if (ingredient.quantity !== null && ingredient.quantity !== undefined) {
+            if (ingredient.quantity !== null && ingredient.quantity !== undefined && ingredient.quantity > 0) {
                 return {
                     ...ingredient,
                     quantity: ingredient.quantity * (targetPortions / currentPortions),
-                    unit: normalizeUnit(ingredient.unit),
+                    unit: ingredient.unit
                 };
             }
             return ingredient;
         });
     };
 
-    const normalizeUnit = (unit) => {
-        switch (unit) {
-            case "lžička":
-            case "lžíce":
-            case "hrst":
-            case "plátek":
-            case "stroužek":
-            case "konzerva":
-            case "lístek":
-            case "kulička":
-                return unit;
-            default:
-                return unit;
-        }
-    };
 
     const handlePortionChange = (e) => {
-        const newPortionCount = e.target.value;
+        const newPortionCount = Math.max(1, Number(e.target.value));
         setPortionCount(newPortionCount);
 
         if (recipe && recipe.ingredients) {
