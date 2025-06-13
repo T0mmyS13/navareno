@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import "../styles/Category.css";
 
 const Category = ({ title, link, description, image }) => (
-    <a href={link} className="category">
+    <Link to={link} className="category">
         <img src={image} alt={title} className="category-image" />
         <h3 className="category-title">{title}</h3>
         <p className="category-description">{description}</p>
-    </a>
+    </Link>
 );
 
 export default Category;
