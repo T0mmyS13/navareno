@@ -202,20 +202,16 @@ const RecipeDetail = () => {
                         color="primary"
                         onClick={handleCopyRecipe}
                     >
-                        Kopirovat
+                        Kopirovat recept
                     </Button>
                     <Button
                         variant="contained"
                         color="primary"
                         onClick={handleEditRecipe}
                     >
-                        Upravit
+                        Upravit recept
                     </Button>
                 </div>
-
-                <a href={`/${category}`} className="back-button">
-                    Zpět
-                </a>
             </div>
         </div>
     );
