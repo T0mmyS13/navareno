@@ -59,9 +59,7 @@ const AddRecipePage = () => {
     const [time, setTime] = useState(editingRecipe ? editingRecipe.time : "");
     const [instructions, setInstructions] = useState(editingRecipe ? editingRecipe.instructions : [""]);
     const [ingredients, setIngredients] = useState(editingRecipe ? editingRecipe.ingredients : [{ name: "", quantity: "", unit: "" }]);
-    const [selectedCategory, setSelectedCategory] = useState(
-        editingRecipe && editingRecipe.category ? editingRecipe.category : ""
-    );
+    const [selectedCategory, setSelectedCategory] = useState(editingRecipe && editingRecipe.category ? editingRecipe.category : "");
     const [difficulty, setDifficulty] = useState(editingRecipe ? editingRecipe.difficulty : "");
     const { showToast } = useToast();
     const navigate = useNavigate();
@@ -408,7 +406,7 @@ const AddRecipePage = () => {
                             {/* Tlačítko pro odebrání kroku */}
                             <IconButton
                                 onClick={() => handleRemoveInstruction(index)}
-                                disabled={ingredients.length <= 1 || isCopying}
+                                disabled={instructions.length <= 1 || isCopying}
                                 color="error"
                                 className="remove-button"
                             >
