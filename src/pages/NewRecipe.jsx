@@ -344,11 +344,11 @@ const AddRecipePage = () => {
                                 type="number"
                                 disabled={isCopying}
                                 value={ingredient.quantity}
-                                inputProps={{ min: 0 }}
+                                inputProps={{ min: 0, step: "any" }}
                                 onChange={(e) =>
                                     setIngredients(
                                         ingredients.map((ing, i) =>
-                                            i === index ? { ...ing, quantity: e.target.value } : ing
+                                            i === index ? { ...ing, quantity: e.target.value.replace(",", ".") } : ing
                                         )
                                     )
                                 }
