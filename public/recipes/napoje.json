@@ -19,7 +19,8 @@
     ],
     "time": 10,
     "rating": 4.5,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Mojito",
@@ -43,7 +44,8 @@
     ],
     "time": 5,
     "rating": 4.8,
-    "difficulty": 2
+    "difficulty": 2,
+    "portion": 2
   },
   {
     "title": "Pina Colada",
@@ -63,7 +65,8 @@
     ],
     "time": 5,
     "rating": 4.7,
-    "difficulty": 2
+    "difficulty": 2,
+    "portion": 2
   },
   {
     "title": "Nealkoholická mojito",
@@ -85,7 +88,8 @@
     ],
     "time": 5,
     "rating": 4.3,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Frapé",
@@ -107,6 +111,7 @@
     ],
     "time": 5,
     "rating": 4.4,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   }
 ]

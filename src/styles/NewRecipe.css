@@ -68,7 +68,8 @@
 }
 
 .time-field,
-.difficulty-field {
+.difficulty-field,
+.portion-field {
     flex: 1;
     min-width: 250px;
 }

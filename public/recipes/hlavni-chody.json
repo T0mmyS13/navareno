@@ -28,7 +28,8 @@
     ],
     "time": 120,
     "rating": 4.9,
-    "difficulty": 3
+    "difficulty": 3,
+    "portion": 2
   },
   {
     "title": "Kuřecí řízek",
@@ -49,7 +50,8 @@
     ],
     "time": 30,
     "rating": 4.7,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Špagety Carbonara",
@@ -61,7 +63,6 @@
       { "name": "vejce", "quantity": 2, "unit": "ks" },
       { "name": "parmazán", "quantity": 50, "unit": "g" },
       { "name": "slanina", "quantity": 100, "unit": "g" }
-
     ],
     "instructions": [
       "Uvařte špagety al dente.",
@@ -72,7 +73,8 @@
     ],
     "time": 20,
     "rating": 4.8,
-    "difficulty": 2
+    "difficulty": 2,
+    "portion": 2
   },
   {
     "title": "Pečená kachna se zelím",
@@ -95,7 +97,8 @@
     ],
     "time": 180,
     "rating": 4.9,
-    "difficulty": 3
+    "difficulty": 3,
+    "portion": 2
   },
   {
     "title": "Zapečené brambory se smetanou",
@@ -117,6 +120,7 @@
     ],
     "time": 60,
     "rating": 4.6,
-    "difficulty": 2
+    "difficulty": 2,
+    "portion": 2
   }
 ]

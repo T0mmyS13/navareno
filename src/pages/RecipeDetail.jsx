@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import "../styles/RecipeDetail.css";
 import FoodItem from "../atoms/FoodItem.jsx";
 import {convertUnits, getDeclinedUnit} from "../utils/units.js";
 import { DataGrid } from "@mui/x-data-grid";
 import { useToast } from "../utils/ToastNotify.jsx";
-import Checkbox from '@mui/material/Checkbox'; // Importujeme MUI Checkbox
+import Checkbox from '@mui/material/Checkbox';
+import {Button} from "@mui/material"; // Importujeme MUI Checkbox
 
 const RecipeDetail = () => {
     const { category, recipeName } = useParams();
@@ -18,6 +19,31 @@ const RecipeDetail = () => {
         return saved ? JSON.parse(saved) : [];
     });
     const { showToast } = useToast();
+    const navigate = useNavigate();
+    const handleEditRecipe = () => {
+        // Uložíme aktuální recept do sessionStorage, aby byl dostupný v NewRecipe
+        sessionStorage.setItem('editingRecipe', JSON.stringify({
+            ...recipe,
+            category: category
+        }));
+
+        // Přesměrování na stránku NewRecipe
+        navigate('/new-recipe');
+        window.scrollTo(0, 0)
+    };
+
+    const handleCopyRecipe = () => {
+
+        sessionStorage.setItem('copyingRecipe', JSON.stringify({
+            ...recipe,
+            category: category
+        }));
+
+
+        navigate('/new-recipe');
+        window.scrollTo(0, 0)
+    };
+
 
 
     const fetchRecipe = () => {
@@ -28,6 +54,9 @@ const RecipeDetail = () => {
         if (foundRecipe) {
             setRecipe(foundRecipe);
             setAdjustedIngredients(foundRecipe.ingredients);
+            if (foundRecipe.portion && !isNaN(foundRecipe.portion)) {
+                setPortionCount(Number(foundRecipe.portion));
+            }
         } else {
             console.error("Recept nebyl nalezen.");
         }
@@ -59,7 +88,7 @@ const RecipeDetail = () => {
         if (recipe && recipe.ingredients) {
             const adjusted = adjustIngredientsForPortions(
                 recipe.ingredients,
-                2,
+                recipe.portion || 2, // Předpokládáme, že původní porce jsou 2, pokud není uvedeno jinak
                 newPortionCount
             ).map(ingredient => {
                 const { quantity, unit } = convertUnits(ingredient.quantity, ingredient.unit);
@@ -166,6 +195,23 @@ const RecipeDetail = () => {
                 ) : (
                     <p>Postup není k dispozici.</p>
                 )}
+
+                <div className="recipe-actions">
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={handleCopyRecipe}
+                    >
+                        Kopirovat
+                    </Button>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={handleEditRecipe}
+                    >
+                        Upravit
+                    </Button>
+                </div>
 
                 <a href={`/${category}`} className="back-button">
                     Zpět

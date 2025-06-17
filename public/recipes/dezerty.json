@@ -22,7 +22,8 @@
     ],
     "time": 60,
     "rating": 4.7,
-    "difficulty": 2
+    "difficulty": 2,
+    "portion": 2
   },
   {
     "title": "Jablečný závin",
@@ -45,7 +46,8 @@
     ],
     "time": 45,
     "rating": 4.8,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Tiramisu",
@@ -68,7 +70,8 @@
     ],
     "time": 30,
     "rating": 4.9,
-    "difficulty": 2
+    "difficulty": 2,
+    "portion": 2
   },
   {
     "title": "Palačinky",
@@ -79,7 +82,6 @@
       { "name": "hladká mouka", "quantity": 200, "unit": "g" },
       { "name": "mléko", "quantity": 400, "unit": "ml" },
       { "name": "vejce", "quantity": 2, "unit": "ks" }
-
     ],
     "instructions": [
       "Smíchejte všechny ingredience do hladkého těsta.",
@@ -88,7 +90,8 @@
     ],
     "time": 20,
     "rating": 4.6,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Čokoládový dort",
@@ -112,6 +115,7 @@
     ],
     "time": 60,
     "rating": 4.9,
-    "difficulty": 2
+    "difficulty": 2,
+    "portion": 2
   }
 ]

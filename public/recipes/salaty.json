@@ -21,7 +21,8 @@
     ],
     "time": 15,
     "rating": 4.7,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Cizrnový salát",
@@ -45,7 +46,8 @@
     ],
     "time": 10,
     "rating": 4.5,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Těstovinový salát",
@@ -69,7 +71,8 @@
     ],
     "time": 20,
     "rating": 4.4,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Mrkvový salát s jablky",
@@ -89,7 +92,8 @@
     ],
     "time": 10,
     "rating": 4.6,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   },
   {
     "title": "Salát s tuňákem",
@@ -113,6 +117,7 @@
     ],
     "time": 15,
     "rating": 4.6,
-    "difficulty": 1
+    "difficulty": 1,
+    "portion": 2
   }
 ]
