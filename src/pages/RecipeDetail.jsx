@@ -202,7 +202,7 @@ const RecipeDetail = () => {
                         color="primary"
                         onClick={handleCopyRecipe}
                     >
-                        Kopirovat recept
+                        Kopírovat recept
                     </Button>
                     <Button
                         variant="contained"
